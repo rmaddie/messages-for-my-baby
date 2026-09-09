@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Messages for My Baby 🤍</title>
+<style>
+:root{--bg:#fff9fc;--card:#fff;--text:#493f46;--muted:#9c8e97;--pink:#d99ab5;--soft:#f5e0e9;--line:#eee0e7}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fff9fc,#fdf3f7);color:var(--text);font-family:Georgia,"Times New Roman",serif}
+header{text-align:center;padding:45px 18px 28px}.heart{font-size:28px}h1{font-size:clamp(36px,8vw,58px);font-weight:500;letter-spacing:-1.5px;margin:8px 0}.sub{font:14px system-ui;color:var(--muted)}
+.wrap{width:min(900px,92%);margin:auto}.editor,.post{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px rgba(120,75,100,.08)}
+.editor{padding:22px;margin-bottom:22px}input,textarea{width:100%;border:0;outline:0;background:transparent;color:var(--text);font-family:inherit}#title{font-size:24px;font-weight:bold;margin-bottom:12px}#body{font-size:17px;line-height:1.75;min-height:145px;resize:vertical}
+.meta{display:flex;justify-content:space-between;gap:12px;align-items:center;font:12px system-ui;color:var(--muted)}button,.file{border:0;border-radius:999px;padding:10px 15px;cursor:pointer;font:600 13px system-ui}.primary{background:var(--pink);color:white}.soft{background:var(--soft);color:#80596a}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.search{background:white;border:1px solid var(--line);border-radius:999px;padding:11px 16px;flex:1;min-width:180px;font:14px system-ui}.posts{display:grid;gap:17px;padding-bottom:45px}.post{padding:23px}.date{font:600 11px system-ui;text-transform:uppercase;letter-spacing:1.2px;color:var(--pink);margin-bottom:8px}.post h2{font-size:24px;margin:0 0 11px}.post p{white-space:pre-wrap;line-height:1.75;font-size:16px;margin:0}.empty{text-align:center;color:var(--muted);padding:45px;font:14px system-ui}footer{text-align:center;color:#b3a5ad;font:12px system-ui;padding:0 15px 35px}.hidden{display:none}
+@media(max-width:600px){.meta{flex-direction:column;align-items:flex-end}.editor,.post{border-radius:18px}}
+</style></head>
+<body>
+<header><div class="heart">🤍🌸</div><h1>Messages for My Baby</h1><div class="sub">Things I wanted to tell you, but didn't.</div></header>
+<main class="wrap">
+<section class="editor">
+<input id="title" maxlength="100" placeholder="A little thought for Baby…">
+<textarea id="body" placeholder="Baby, today I wanted to tell you…"></textarea>
+<div class="meta"><span>Saved privately in this browser.</span><span><button class="soft" id="clear">Clear</button> <button class="primary" id="save">Save message 🤍</button></span></div>
+</section>
+<div class="actions"><input class="search" id="search" placeholder="Search your messages…"><button class="soft" id="export">Export</button><label class="file soft" for="import">Import</label><input class="hidden" id="import" type="file" accept=".json"></div>
+<section id="posts" class="posts"></section>
+</main>
+<footer>For all the “BABY, GUESS WHAT—” moments that never got sent. 🤍</footer>
+<script>
+const KEY="messagesForMyBaby.v1";let msgs=JSON.parse(localStorage.getItem(KEY)||"[]");
+const $=s=>document.querySelector(s),title=$("#title"),body=$("#body"),posts=$("#posts"),search=$("#search");
+const save=()=>localStorage.setItem(KEY,JSON.stringify(msgs));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function render(){let q=search.value.toLowerCase().trim(),a=msgs.filter(m=>(m.title+" "+m.body).toLowerCase().includes(q)).sort((a,b)=>b.date.localeCompare(a.date));posts.innerHTML=a.length?a.map(m=>`<article class="post"><div class="date">${new Date(m.date).toLocaleString()}</div><h2>${esc(m.title||"Untitled thought")}</h2><p>${esc(m.body)}</p><div class="actions"><button class="soft" onclick="editMsg('${m.id}')">Edit</button><button class="soft" onclick="delMsg('${m.id}')">Delete</button></div></article>`).join(""):`<div class="empty">${msgs.length?"No messages match that search.":"Your first unsent message is waiting here. 🤍"}</div>`}
+$("#save").onclick=()=>{if(!body.value.trim())return body.focus();msgs.push({id:Date.now()+"-"+Math.random(),date:new Date().toISOString(),title:title.value.trim(),body:body.value.trim()});save();title.value="";body.value="";render();body.focus()};
+$("#clear").onclick=()=>{title.value="";body.value="";body.focus()};search.oninput=render;
+window.delMsg=id=>{if(confirm("Delete this message?")){msgs=msgs.filter(m=>m.id!=id);save();render()}};
+window.editMsg=id=>{let m=msgs.find(x=>x.id==id);if(!m)return;title.value=m.title;body.value=m.body;msgs=msgs.filter(x=>x.id!=id);save();render();scrollTo({top:0,behavior:"smooth"});body.focus()};
+$("#export").onclick=()=>{let b=new Blob([JSON.stringify(msgs,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="messages-for-my-baby.json";a.click()};
+$("#import").onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!Array.isArray(x))throw 0;msgs=msgs.concat(x.filter(m=>m.body&&m.date));save();render();alert("Messages imported 🤍")}catch{alert("Invalid backup file.")}};r.readAsText(f);e.target.value=""};render();
+</script></body></html>

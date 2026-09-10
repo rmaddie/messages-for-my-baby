@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Messages for My Baby 🤍</title>
+<style>
+:root{--bg:#fff9fc;--card:#fff;--text:#493f46;--muted:#9c8e97;--pink:#d99ab5;--soft:#f5e0e9;--line:#eee0e7}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fff9fc,#fdf3f7);color:var(--text);font-family:Georgia,"Times New Roman",serif}
+header{text-align:center;padding:45px 18px 28px}.heart{font-size:28px}h1{font-size:clamp(36px,8vw,58px);font-weight:500;letter-spacing:-1.5px;margin:8px 0}.sub{font:14px system-ui;color:var(--muted)}
+.wrap{width:min(900px,92%);margin:auto}.editor,.post{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px rgba(120,75,100,.08)}
+.editor{padding:22px;margin-bottom:22px}input,textarea{width:100%;border:0;outline:0;background:transparent;color:var(--text);font-family:inherit}#title{font-size:24px;font-weight:bold;margin-bottom:12px}#body{font-size:17px;line-height:1.75;min-height:145px;resize:vertical}
+.meta{display:flex;justify-content:space-between;gap:12px;align-items:center;font:12px system-ui;color:var(--muted)}button,.file{border:0;border-radius:999px;padding:10px 15px;cursor:pointer;font:600 13px system-ui}.primary{background:var(--pink);color:white}.soft{background:var(--soft);color:#80596a}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.search{background:white;border:1px solid var(--line);border-radius:999px;padding:11px 16px;flex:1;min-width:180px;font:14px system-ui}.posts{display:grid;gap:17px;padding-bottom:45px}.post{padding:23px}.date{font:600 11px system-ui;text-transform:uppercase;letter-spacing:1.2px;color:var(--pink);margin-bottom:8px}.post h2{font-size:24px;margin:0 0 11px}.post p{white-space:pre-wrap;line-height:1.75;font-size:16px;margin:0}.empty{text-align:center;color:var(--muted);padding:45px;font:14px system-ui}footer{text-align:center;color:#b3a5ad;font:12px system-ui;padding:0 15px 35px}.hidden{display:none}
+.attachments{display:grid;gap:10px;margin-top:16px}.attachment{border:1px solid var(--line);border-radius:15px;padding:10px;background:#fffafd}.attachment img{display:block;max-width:100%;max-height:360px;border-radius:11px;margin-bottom:8px}.attachment audio{width:100%;margin:4px 0 8px}.attachment video{display:block;max-width:100%;max-height:420px;border-radius:11px;margin-bottom:8px}.attachment a{color:#80596a;text-decoration:none;font:600 13px system-ui;word-break:break-word}.filepick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}.filepick label{background:var(--soft);color:#80596a;border-radius:999px;padding:9px 13px;cursor:pointer;font:600 13px system-ui}.filepick input{display:none}.filelist{font:12px system-ui;color:var(--muted);margin-top:8px}.status{font:12px system-ui;color:var(--muted);margin-top:10px;min-height:18px}
+@media(max-width:600px){.meta{flex-direction:column;align-items:flex-end}.editor,.post{border-radius:18px}}
+
+.community{margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
+.reacts{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.react{background:#fffafd;border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:15px}
+.react.reacted{background:var(--soft);box-shadow:inset 0 0 0 1px var(--pink)}
+.react small{font:600 11px system-ui;color:#80596a}
+.commentbox{display:flex;gap:8px;align-items:flex-end;margin-top:10px}
+.commentbox textarea{border:1px solid var(--line);border-radius:13px;padding:10px 12px;min-height:48px;resize:vertical;font:14px system-ui;background:#fff}
+.comments{display:grid;gap:8px;margin-top:12px}
+.comment{background:#fffafd;border:1px solid var(--line);border-radius:14px;padding:10px 12px;font:14px system-ui;line-height:1.5}
+.commentdate{color:var(--muted);font-size:11px;margin-left:8px}
+.tiny{background:transparent;border:0;padding:4px 0;color:var(--muted);cursor:pointer;font:11px system-ui}
+@media(max-width:600px){.commentbox{flex-direction:column;align-items:stretch}}
+
+#petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:20}
+.branch{position:fixed;top:0;bottom:0;width:150px;pointer-events:none;z-index:1;opacity:.72}
+.branch.left{left:0}.branch.right{right:0;transform:scaleX(-1)}
+.branch svg{width:100%;height:100%}
+.wrap,header{position:relative;z-index:2}
+@media(max-width:600px){.branch{width:95px;opacity:.55}header{padding-top:34px}.wrap{width:94%}}
+</style></head>
+<body>
+<canvas id="petals" aria-hidden="true"></canvas>
+<div class="branch left" aria-hidden="true"><svg viewBox="0 0 150 900" preserveAspectRatio="none"><path d="M-15 900 C35 700 5 520 85 350 C120 270 110 130 165 0" fill="none" stroke="#765b68" stroke-width="7" stroke-linecap="round"/><path d="M45 560 C5 470 10 390 -20 330 M75 390 C135 330 145 250 150 180 M92 285 C45 220 45 160 25 105" fill="none" stroke="#765b68" stroke-width="4" stroke-linecap="round"/><g fill="#f4a8c7" stroke="#fff0f6" stroke-width="2"><circle cx="24" cy="105" r="8"/><circle cx="145" cy="180" r="8"/><circle cx="10" cy="390" r="8"/><circle cx="85" cy="350" r="8"/></g></svg></div>
+<div class="branch right" aria-hidden="true"><svg viewBox="0 0 150 900" preserveAspectRatio="none"><path d="M-15 900 C35 700 5 520 85 350 C120 270 110 130 165 0" fill="none" stroke="#765b68" stroke-width="7" stroke-linecap="round"/><path d="M45 560 C5 470 10 390 -20 330 M75 390 C135 330 145 250 150 180 M92 285 C45 220 45 160 25 105" fill="none" stroke="#765b68" stroke-width="4" stroke-linecap="round"/><g fill="#f4a8c7" stroke="#fff0f6" stroke-width="2"><circle cx="24" cy="105" r="8"/><circle cx="145" cy="180" r="8"/><circle cx="10" cy="390" r="8"/><circle cx="85" cy="350" r="8"/></g></svg></div>
+<header><div class="heart">🤍🌸</div><h1>Messages for My Baby</h1><div class="sub">Things I wanted to tell you, but didn't.</div></header>
+<main class="wrap">
+<section class="editor" id="composer">
+<input id="title" maxlength="100" placeholder="A little thought for Baby…">
+<textarea id="body" placeholder="Baby, today I wanted to tell you…"></textarea>
+<div class="filepick">
+  <label for="attachments">📎 Add photos, audio, videos or files</label>
+  <input id="attachments" type="file" multiple>
+</div>
+<div id="filelist" class="filelist"></div>
+<div class="meta"><span>Stored securely in your account.</span><span><button class="soft" id="clear">Clear</button> <button class="primary" id="save">Save message 🤍</button></span></div>
+<div id="saveStatus" class="status"></div>
+</section>
+<div class="actions"><input class="search" id="search" placeholder="Search your messages…"><button class="soft" id="export">Export</button><label class="file soft" for="import">Import</label><input class="hidden" id="import" type="file" accept=".json"></div>
+<section id="posts" class="posts"></section>
+</main>
+<footer>For all the “BABY, GUESS WHAT—” moments that never got sent. 🤍</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL="https://botpymtjxkwfuxzzbprj.supabase.co";
+const SUPABASE_KEY="sb_publishable_qbZN_IgzgkCSqtarujiYAw_raquOF0A";
+const BUCKET="message-attachments";
+const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+const $=s=>document.querySelector(s),title=$("#title"),body=$("#body"),posts=$("#posts"),search=$("#search"),attachments=$("#attachments"),filelist=$("#filelist"),saveStatus=$("#saveStatus");
+let msgs=[],filesByMessage=new Map(),editingId=null,viewer=null,owner=false;
+
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtSize=n=>{n=Number(n||0);if(n<1024)return n+" B";if(n<1024**2)return (n/1024).toFixed(1)+" KB";if(n<1024**3)return (n/1024**2).toFixed(1)+" MB";return (n/1024**3).toFixed(1)+" GB"};
+const isImage=m=>/^image\//.test(m||""),isAudio=m=>/^audio\//.test(m||""),isVideo=m=>/^video\//.test(m||"");
+
+function visitorId(){
+ let v=localStorage.getItem("baby_public_visitor_id");
+ if(!v){v=crypto.randomUUID();localStorage.setItem("baby_public_visitor_id",v)}
+ return v;
+}
+function visitorName(){
+ return localStorage.getItem("baby_public_name")||"Anonymous";
+}
+function setPublicName(){
+ const n=prompt("What name should appear on your comments?",visitorName());
+ if(n!==null&&n.trim()){localStorage.setItem("baby_public_name",n.trim().slice(0,40));render()}
+}
+async function auth(create){
+ const email=$("#email").value.trim(),password=$("#password").value;
+ if(!email||!password)return $("#authMsg").textContent="Please enter your email and password.";
+ $("#authMsg").textContent=create?"Creating your account…":"Signing you in…";
+ const r=create?await supabase.auth.signUp({email,password}):await supabase.auth.signInWithPassword({email,password});
+ if(r.error){$("#authMsg").textContent=r.error.message;return;}
+ if(create&&!r.data.session){$("#authMsg").textContent="Account created! Check your email to confirm it, then sign in.";return;}
+ await init();
+}
+async function updateAuthUI(){
+ let old=$("#auth");if(old)old.remove();
+ const {data:{session}}=await supabase.auth.getSession();
+ owner=!!session;
+ const el=document.createElement("div");el.id="auth";el.className="editor";
+ if(session){
+  el.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+   <div><strong>Owner mode 🤍</strong><div style="font:12px system-ui;color:var(--muted);margin-top:5px">${esc(session.user.email)} · You can create, edit and delete posts.</div></div>
+   <button class="soft" id="logout">Log out</button></div>`;
+  document.querySelector("main").prepend(el);
+  $("#logout").onclick=async()=>{await supabase.auth.signOut();location.reload()};
+  $("#composer").classList.remove("hidden");
+ }else{
+  el.innerHTML=`<div><strong>Welcome to My Baby corner 🤍🌸</strong>
+   <div style="font:12px system-ui;color:var(--muted);margin-top:5px">You're viewing the public journal. Anyone with this link can read and leave a reaction or comment.</div>
+   <div style="margin-top:12px"><button class="soft" id="ownerLoginBtn">Owner login</button>
+   <button class="soft" id="nameBtn">Set comment name</button></div>
+   <div id="authForm" class="hidden" style="margin-top:14px;display:grid;gap:10px">
+    <input id="email" type="email" placeholder="Owner email" style="border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:white">
+    <input id="password" type="password" placeholder="Password" style="border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:white">
+    <div><button class="primary" id="signin">Sign in 🤍</button><button class="soft" id="signup">Create account</button></div>
+    <div id="authMsg" style="font:12px system-ui;color:var(--muted)"></div>
+   </div></div>`;
+  document.querySelector("main").prepend(el);
+  $("#composer").classList.add("hidden");
+  $("#ownerLoginBtn").onclick=()=>$("#authForm").classList.toggle("hidden");
+  $("#nameBtn").onclick=setPublicName;
+  $("#signin").onclick=()=>auth(false);$("#signup").onclick=()=>auth(true);
+ }
+}
+async function load(){
+ const {data,error}=await supabase.from("messages").select("id,user_id,title,body,created_at,updated_at").order("created_at",{ascending:false});
+ if(error){posts.innerHTML=`<div class="empty">Couldn't load the journal: ${esc(error.message)}</div>`;return}
+ msgs=data||[];
+ filesByMessage=new Map();
+ const ids=msgs.map(m=>m.id);
+ if(ids.length){
+  const ar=await supabase.from("message_attachments").select("id,message_id,file_name,file_path,mime_type,size_bytes,created_at").in("message_id",ids).order("created_at",{ascending:true});
+  if(!ar.error){
+   for(const f of ar.data||[]){
+    const arr=filesByMessage.get(f.message_id)||[];arr.push(f);filesByMessage.set(f.message_id,arr);
+   }
+  }
+ }
+ render();
+}
+function attachmentHtml(f){
+ const {data}=supabase.storage.from(BUCKET).getPublicUrl(f.file_path),url=data.publicUrl,label=esc(f.file_name);
+ if(isImage(f.mime_type))return `<div class="attachment"><img src="${url}" alt="${label}" loading="lazy"><a href="${url}" target="_blank" rel="noopener">🖼️ ${label} · ${fmtSize(f.size_bytes)}</a></div>`;
+ if(isAudio(f.mime_type))return `<div class="attachment"><audio controls src="${url}"></audio><a href="${url}" target="_blank" rel="noopener">🎵 ${label} · ${fmtSize(f.size_bytes)}</a></div>`;
+ if(isVideo(f.mime_type))return `<div class="attachment"><video controls src="${url}"></video><a href="${url}" target="_blank" rel="noopener">🎬 ${label} · ${fmtSize(f.size_bytes)}</a></div>`;
+ return `<div class="attachment"><a href="${url}" target="_blank" rel="noopener">📎 ${label} · ${fmtSize(f.size_bytes)}</a></div>`;
+}
+async function interactionHtml(m){
+ const [rr,cr]=await Promise.all([
+  supabase.from("public_message_reactions").select("emoji,visitor_id").eq("message_id",m.id),
+  supabase.from("public_message_comments").select("id,display_name,body,visitor_id,created_at").eq("message_id",m.id).order("created_at",{ascending:true})
+ ]);
+ const reactions=rr.data||[],comments=cr.data||[];
+ const emojis=["❤️","😂","😭","🥹","🤍","👀","🌸","🤣"];
+ const counts={};for(const r of reactions)counts[r.emoji]=(counts[r.emoji]||0)+1;
+ const reactionButtons=emojis.map(e=>`<button class="react ${reactions.some(r=>r.emoji===e&&r.visitor_id===visitorId())?'reacted':''}" onclick="react('${m.id}','${e}')">${e}${counts[e]?` <small>${counts[e]}</small>`:""}</button>`).join("");
+ const commentHtml=comments.map(c=>`<div class="comment"><div><strong>${esc(c.display_name||"Anonymous")}</strong><span class="commentdate">${new Date(c.created_at).toLocaleString()}</span></div><div>${esc(c.body)}</div>${c.visitor_id===visitorId()?`<button class="tiny" onclick="deleteComment('${c.id}')">delete</button>`:""}</div>`).join("");
+ return `<div class="community"><div class="reacts">${reactionButtons}</div>
+ <button class="tiny" onclick="setPublicName()">✍️ Comment as ${esc(visitorName())}</button>
+ <div class="commentbox"><textarea id="comment-${m.id}" placeholder="Leave a little comment…"></textarea><button class="soft" onclick="comment('${m.id}')">Reply 💬</button></div>
+ ${commentHtml?`<div class="comments">${commentHtml}</div>`:""}</div>`;
+}
+async function render(){
+ let q=search.value.toLowerCase().trim(),a=msgs.filter(m=>(m.title+" "+m.body).toLowerCase().includes(q));
+ if(!a.length){posts.innerHTML=`<div class="empty">${msgs.length?"No messages match that search.":"No messages yet. 🤍"}</div>`;return}
+ posts.innerHTML=a.map(m=>`<article class="post" id="post-${m.id}"><div class="date">${new Date(m.created_at).toLocaleString()}</div><h2>${esc(m.title||"Untitled thought")}</h2><p>${esc(m.body)}</p>${(filesByMessage.get(m.id)||[]).length?`<div class="attachments">${filesByMessage.get(m.id).map(attachmentHtml).join("")}</div>`:""}${owner&&m.user_id===viewer?.id?`<div class="actions"><button class="soft" onclick="editMsg('${m.id}')">Edit</button><button class="soft" onclick="delMsg('${m.id}')">Delete</button></div>`:""}<div class="interaction" data-message="${m.id}"><div class="empty">Loading reactions and comments…</div></div></article>`).join("");
+ for(const m of a){
+  const el=document.querySelector(`.interaction[data-message="${m.id}"]`);
+  if(el)el.innerHTML=await interactionHtml(m);
+ }
+}
+attachments.onchange=()=>{filelist.textContent=Array.from(attachments.files||[]).map(f=>`📎 ${f.name} (${fmtSize(f.size)})`).join("  •  ")||""};
+async function uploadAttachments(messageId,userId){
+ const list=Array.from(attachments.files||[]);
+ for(const f of list){
+  const safe=f.name.replace(/[^a-zA-Z0-9._-]+/g,"_");
+  const path=`${userId}/${messageId}/${crypto.randomUUID()}-${safe}`;
+  const up=await supabase.storage.from(BUCKET).upload(path,f,{upsert:false,contentType:f.type||"application/octet-stream"});
+  if(up.error)throw up.error;
+  const ins=await supabase.from("message_attachments").insert({message_id:messageId,user_id:userId,file_name:f.name,file_path:path,mime_type:f.type||"application/octet-stream",size_bytes:f.size});
+  if(ins.error){await supabase.storage.from(BUCKET).remove([path]);throw ins.error;}
+ }
+}
+$("#save").onclick=async()=>{
+ if(!body.value.trim())return body.focus();
+ const {data:{user}}=await supabase.auth.getUser();if(!user)return;
+ saveStatus.textContent="Saving…";
+ const payload={title:title.value.trim(),body:body.value.trim()};
+ let messageId=editingId,r;
+ if(editingId)r=await supabase.from("messages").update(payload).eq("id",editingId).eq("user_id",user.id);
+ else{messageId=crypto.randomUUID();r=await supabase.from("messages").insert({...payload,id:messageId,user_id:user.id});}
+ if(r.error){saveStatus.textContent="";return alert("Couldn't save: "+r.error.message)}
+ try{await uploadAttachments(messageId,user.id)}catch(err){alert("Message saved, but an attachment could not be uploaded: "+(err.message||err))}
+ editingId=null;title.value="";body.value="";attachments.value="";filelist.textContent="";$("#save").textContent="Save message 🤍";saveStatus.textContent="Saved 🤍";await load();body.focus();setTimeout(()=>saveStatus.textContent="",2500);
+};
+$("#clear").onclick=()=>{editingId=null;title.value="";body.value="";attachments.value="";filelist.textContent="";$("#save").textContent="Save message 🤍";saveStatus.textContent="";body.focus()};
+search.oninput=render;
+window.editMsg=id=>{let m=msgs.find(x=>x.id==id);if(!m)return;editingId=id;title.value=m.title||"";body.value=m.body||"";$("#save").textContent="Update message 🤍";filelist.textContent=(filesByMessage.get(id)||[]).length?`Existing attachments stay. Add more below if you want.`:"";scrollTo({top:0,behavior:"smooth"});body.focus()};
+window.delMsg=async id=>{
+ if(!confirm("Delete this message and its attachments?"))return;
+ const {data:{user}}=await supabase.auth.getUser();if(!user)return;
+ const fs=filesByMessage.get(id)||[];if(fs.length)await supabase.storage.from(BUCKET).remove(fs.map(f=>f.file_path));
+ await supabase.from("message_attachments").delete().eq("message_id",id).eq("user_id",user.id);
+ const r=await supabase.from("messages").delete().eq("id",id).eq("user_id",user.id);if(r.error)return alert(r.error.message);await load();
+};
+window.react=async(id,emoji)=>{
+ const v=visitorId();
+ const existing=await supabase.from("public_message_reactions").select("id").eq("message_id",id).eq("visitor_id",v).eq("emoji",emoji).maybeSingle();
+ let r=existing.data?await supabase.from("public_message_reactions").delete().eq("id",existing.data.id):await supabase.from("public_message_reactions").insert({message_id:id,visitor_id:v,emoji});
+ if(r.error)return alert("Couldn't save reaction: "+r.error.message);
+ const el=document.querySelector(`.interaction[data-message="${id}"]`);if(el)el.innerHTML=await interactionHtml(msgs.find(m=>m.id===id));
+};
+window.comment=async id=>{
+ const box=$(`#comment-${id}`),text=box?.value.trim();if(!text)return;
+ const r=await supabase.from("public_message_comments").insert({message_id:id,visitor_id:visitorId(),display_name:visitorName().slice(0,40),body:text});
+ if(r.error)return alert("Couldn't post comment: "+r.error.message);
+ box.value="";const el=document.querySelector(`.interaction[data-message="${id}"]`);if(el)el.innerHTML=await interactionHtml(msgs.find(m=>m.id===id));
+};
+window.deleteComment=async id=>{
+ if(!confirm("Delete your comment?"))return;
+ const r=await supabase.from("public_message_comments").delete().eq("id",id).eq("visitor_id",visitorId());
+ if(r.error)return alert("Couldn't delete: "+r.error.message);
+ await render();
+};
+$("#export").onclick=async()=>{
+ const data=msgs.map(m=>({...m,attachments:(filesByMessage.get(m.id)||[]).map(f=>({file_name:f.file_name,file_path:f.file_path,mime_type:f.mime_type,size_bytes:f.size_bytes}))}));
+ const b=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="messages-for-my-baby.json";a.click();URL.revokeObjectURL(a.href);
+};
+$("#import").onchange=async e=>{
+ const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=async()=>{
+  try{const x=JSON.parse(r.result);if(!Array.isArray(x))throw new Error("Invalid backup file.");const {data:{user}}=await supabase.auth.getUser();if(!user)throw new Error("Please sign in first.");const rows=x.filter(m=>m.body).map(m=>({id:crypto.randomUUID(),user_id:user.id,title:m.title||"",body:m.body,created_at:m.created_at||new Date().toISOString()}));if(rows.length){const q=await supabase.from("messages").insert(rows);if(q.error)throw q.error}alert("Messages imported 🤍");await load()}catch(err){alert("Import failed: "+(err.message||"Invalid backup file."))}e.target.value="";
+ };r.readAsText(f);
+};
+async function init(){
+ const {data:{session}}=await supabase.auth.getSession();viewer=session?.user||null;
+ await updateAuthUI();await load();
+}
+supabase.auth.onAuthStateChange(()=>setTimeout(init,0));
+init();
+
+const canvas=document.getElementById('petals'),ctx=canvas.getContext('2d');let petals=[];
+function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+function make(){return{x:Math.random()*innerWidth,y:-20-Math.random()*innerHeight,r:3+Math.random()*5,vy:.7+Math.random()*1.5,vx:-.35+Math.random()*.7,rot:Math.random()*6.28,vr:-.03+Math.random()*.06,phase:Math.random()*6.28}}
+function animate(t){ctx.clearRect(0,0,innerWidth,innerHeight);if(petals.length<65)petals.push(make());for(const p of petals){p.y+=p.vy;p.x+=p.vx+Math.sin(t/1000+p.phase)*.35;p.rot+=p.vr;if(p.y>innerHeight+20){Object.assign(p,make(),{y:-20})}ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle='rgba(244,168,199,.85)';ctx.beginPath();ctx.ellipse(0,0,p.r,p.r*.65,0,0,Math.PI*2);ctx.fill();ctx.restore()}requestAnimationFrame(animate)}
+addEventListener('resize',resize);resize();requestAnimationFrame(animate);
+</script></body></html>

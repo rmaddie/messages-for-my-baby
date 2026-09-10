@@ -1,497 +1,1775 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Messages for My Baby 🤍</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Messages for My Baby 🤍🌸</title>
+
 <style>
-:root{--bg:#fff9fc;--card:#fff;--text:#493f46;--muted:#9c8e97;--pink:#d99ab5;--soft:#f5e0e9;--line:#eee0e7}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fff9fc,#fdf3f7);color:var(--text);font-family:Georgia,"Times New Roman",serif}
-header{text-align:center;padding:45px 18px 28px}.heart{font-size:28px}h1{font-size:clamp(36px,8vw,58px);font-weight:500;letter-spacing:-1.5px;margin:8px 0}.sub{font:14px system-ui;color:var(--muted)}
-.wrap{width:min(900px,92%);margin:auto}.editor,.post{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px rgba(120,75,100,.08)}
-.editor{padding:22px;margin-bottom:22px}input,textarea{width:100%;border:0;outline:0;background:transparent;color:var(--text);font-family:inherit}#title{font-size:24px;font-weight:bold;margin-bottom:12px}#body{font-size:17px;line-height:1.75;min-height:145px;resize:vertical}
-.meta{display:flex;justify-content:space-between;gap:12px;align-items:center;font:12px system-ui;color:var(--muted)}button,.file{border:0;border-radius:999px;padding:10px 15px;cursor:pointer;font:600 13px system-ui}.primary{background:var(--pink);color:white}.soft{background:var(--soft);color:#80596a}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.search{background:white;border:1px solid var(--line);border-radius:999px;padding:11px 16px;flex:1;min-width:180px;font:14px system-ui}.posts{display:grid;gap:17px;padding-bottom:45px}.post{padding:23px}.date{font:600 11px system-ui;text-transform:uppercase;letter-spacing:1.2px;color:var(--pink);margin-bottom:8px}.post h2{font-size:24px;margin:0 0 11px}.post p{white-space:pre-wrap;line-height:1.75;font-size:16px;margin:0}.empty{text-align:center;color:var(--muted);padding:45px;font:14px system-ui}footer{text-align:center;color:#b3a5ad;font:12px system-ui;padding:0 15px 35px}.hidden{display:none}
-.attachments{display:grid;gap:10px;margin-top:16px}.attachment{border:1px solid var(--line);border-radius:15px;padding:10px;background:#fffafd}.attachment img{display:block;max-width:100%;max-height:360px;border-radius:11px;margin-bottom:8px}.attachment audio{width:100%;margin:4px 0 8px}.attachment video{display:block;max-width:100%;max-height:420px;border-radius:11px;margin-bottom:8px}.attachment a{color:#80596a;text-decoration:none;font:600 13px system-ui;word-break:break-word}.filepick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}.filepick label{background:var(--soft);color:#80596a;border-radius:999px;padding:9px 13px;cursor:pointer;font:600 13px system-ui}.filepick input{display:none}.filelist{font:12px system-ui;color:var(--muted);margin-top:8px}.status{font:12px system-ui;color:var(--muted);margin-top:10px;min-height:18px}
-@media(max-width:600px){.meta{flex-direction:column;align-items:flex-end}.editor,.post{border-radius:18px}}
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
-.community{margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
-.reacts{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-.react{background:#fffafd;border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:15px}
-.react.reacted{background:var(--soft);box-shadow:inset 0 0 0 1px var(--pink)}
-.react small{font:600 11px system-ui;color:#80596a}
-.commentbox{display:flex;gap:8px;align-items:flex-end;margin-top:10px}
-.commentbox textarea{border:1px solid var(--line);border-radius:13px;padding:10px 12px;min-height:48px;resize:vertical;font:14px system-ui;background:#fff}
-.comments{display:grid;gap:8px;margin-top:12px}
-.comment{background:#fffafd;border:1px solid var(--line);border-radius:14px;padding:10px 12px;font:14px system-ui;line-height:1.5}
-.commentdate{color:var(--muted);font-size:11px;margin-left:8px}
-.tiny{background:transparent;border:0;padding:4px 0;color:var(--muted);cursor:pointer;font:11px system-ui}
-@media(max-width:600px){.commentbox{flex-direction:column;align-items:stretch}}
-</style></head>
+:root{
+  --lav:#eee9fb;
+  --lav2:#e5ddf7;
+  --purple:#765a98;
+  --purple2:#9278b2;
+  --pink:#e8b8ce;
+  --rose:#c986a8;
+  --ink:#51475b;
+  --muted:#988ea2;
+  --white:rgba(255,255,255,.88);
+  --line:rgba(133,105,157,.16);
+  --shadow:0 18px 55px rgba(92,67,115,.13);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:"DM Sans",system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 8% 8%,rgba(232,184,206,.32),transparent 24%),
+    radial-gradient(circle at 92% 18%,rgba(205,191,239,.48),transparent 28%),
+    linear-gradient(135deg,#fbf9ff 0%,#f2edfc 48%,#fff8fb 100%);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+body:before,
+body:after{
+  content:"";
+  position:fixed;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.5;
+  width:230px;
+  height:230px;
+  background:
+    radial-gradient(circle at 35% 35%,#f3cddd 0 7px,transparent 8px),
+    radial-gradient(circle at 58% 25%,#ead0e3 0 6px,transparent 7px),
+    radial-gradient(circle at 72% 52%,#f1c9da 0 7px,transparent 8px),
+    radial-gradient(circle at 43% 65%,#ead2f0 0 6px,transparent 7px);
+}
+
+body:before{
+  top:20px;
+  left:-90px;
+  transform:rotate(-18deg);
+}
+
+body:after{
+  right:-90px;
+  bottom:80px;
+  transform:rotate(24deg);
+}
+
+.petal{
+  position:fixed;
+  top:-30px;
+  z-index:5;
+  pointer-events:none;
+  width:12px;
+  height:9px;
+  background:#edbfd3;
+  border-radius:90% 10% 90% 10%;
+  opacity:.55;
+  animation:fall linear infinite;
+}
+
+.p1{left:8%;animation-duration:13s}
+.p2{left:27%;animation-duration:17s;animation-delay:4s}
+.p3{left:51%;animation-duration:15s;animation-delay:1s}
+.p4{left:74%;animation-duration:19s;animation-delay:7s}
+.p5{left:91%;animation-duration:14s;animation-delay:3s}
+
+@keyframes fall{
+  to{
+    transform:translate(80px,110vh) rotate(540deg);
+    opacity:0;
+  }
+}
+
+header{
+  padding:58px 18px 30px;
+  text-align:center;
+  position:relative;
+}
+
+.branch{
+  font-size:34px;
+  letter-spacing:9px;
+  opacity:.72;
+}
+
+h1{
+  margin:4px 0 2px;
+  font-family:Caveat,cursive;
+  font-size:clamp(48px,10vw,76px);
+  font-weight:700;
+  line-height:1;
+  color:#6f568f;
+}
+
+.subtitle{
+  font-family:Caveat,cursive;
+  font-size:25px;
+  color:#a07d99;
+  margin-top:7px;
+}
+
+.intro{
+  max-width:650px;
+  margin:12px auto 0;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.wrap{
+  width:min(940px,92%);
+  margin:auto;
+}
+
+.card{
+  background:var(--white);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:var(--shadow);
+  border-radius:28px;
+}
+
+.topbar{
+  padding:13px 17px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.topbar .tinybrand{
+  font-family:Caveat,cursive;
+  font-size:23px;
+  color:var(--purple);
+}
+
+.auth{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+button,
+.pill,
+.filelabel{
+  border:0;
+  border-radius:999px;
+  padding:10px 15px;
+  cursor:pointer;
+  font:600 12px "DM Sans",sans-serif;
+  transition:.2s transform,.2s box-shadow;
+}
+
+button:hover,
+.pill:hover,
+.filelabel:hover{
+  transform:translateY(-1px);
+}
+
+.primary{
+  background:linear-gradient(135deg,#9a7cb8,#c28aa8);
+  color:#fff;
+  box-shadow:0 7px 18px rgba(139,102,153,.2);
+}
+
+.soft{
+  background:#eee8f9;
+  color:#71578e;
+}
+
+.ghost{
+  background:transparent;
+  color:#806c91;
+  border:1px solid var(--line);
+}
+
+#userStatus{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.authpanel{
+  padding:20px;
+  margin-bottom:20px;
+  display:none;
+}
+
+.authpanel.show{
+  display:block;
+}
+
+.authgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.field{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+  font:14px "DM Sans",sans-serif;
+}
+
+.authactions{
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+
+.note{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:9px;
+}
+
+.editor{
+  padding:25px;
+  margin-bottom:22px;
+  display:none;
+}
+
+.editor.show{
+  display:block;
+}
+
+.kicker{
+  font-size:11px;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  color:var(--rose);
+  font-weight:700;
+}
+
+.titleinput{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:var(--ink);
+  font:700 29px Caveat,cursive;
+  margin:6px 0 7px;
+}
+
+textarea{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:var(--ink);
+  font:16px/1.8 "DM Sans",sans-serif;
+  resize:vertical;
+  min-height:145px;
+}
+
+.editorfooter{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border-top:1px solid var(--line);
+  padding-top:13px;
+}
+
+.filelabel{
+  background:#f1ebfa;
+  color:#755b90;
+  display:inline-block;
+}
+
+input[type=file]{
+  display:none;
+}
+
+.filelist{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:8px;
+  line-height:1.7;
+}
+
+.status{
+  font-size:11px;
+  color:var(--muted);
+  min-height:18px;
+  margin-top:8px;
+}
+
+.toolbar{
+  display:flex;
+  gap:9px;
+  margin:0 0 18px;
+  align-items:center;
+}
+
+.search{
+  flex:1;
+  min-width:0;
+  padding:12px 17px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.78);
+  outline:0;
+  font:13px "DM Sans",sans-serif;
+  color:var(--ink);
+}
+
+.posts{
+  display:grid;
+  gap:19px;
+  padding-bottom:55px;
+}
+
+.empty{
+  text-align:center;
+  padding:55px 20px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.post{
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+}
+
+.post:before{
+  content:"🌸";
+  position:absolute;
+  right:19px;
+  top:13px;
+  font-size:25px;
+  opacity:.38;
+}
+
+.date{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--rose);
+  font-weight:700;
+}
+
+.post h2{
+  font:700 31px/1.05 Caveat,cursive;
+  color:#68527e;
+  margin:7px 45px 12px 0;
+}
+
+.postbody{
+  font-size:15px;
+  line-height:1.85;
+  white-space:pre-wrap;
+  color:#5d5365;
+}
+
+.posttools{
+  display:flex;
+  gap:7px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+
+.attachments{
+  display:grid;
+  gap:10px;
+  margin-top:17px;
+}
+
+.attachment{
+  background:#fbf8fe;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:10px;
+}
+
+.attachment img,
+.attachment video{
+  display:block;
+  max-width:100%;
+  max-height:430px;
+  margin:auto;
+  border-radius:13px;
+}
+
+.attachment audio{
+  width:100%;
+}
+
+.attachment a{
+  display:block;
+  color:#785e92;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  margin-top:7px;
+  word-break:break-word;
+}
+
+.community{
+  margin-top:20px;
+  padding-top:17px;
+  border-top:1px solid var(--line);
+}
+
+.reacttitle{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+.reacts{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.react{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:7px 10px;
+  color:#725b85;
+}
+
+.react.active{
+  background:#eee5fa;
+  border-color:#cdbce2;
+}
+
+.react small{
+  font-size:10px;
+  color:#9b879f;
+  margin-left:2px;
+}
+
+.commentbox{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+
+.comment-input{
+  min-height:45px;
+  max-height:140px;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:15px;
+  padding:10px 12px;
+  flex:1;
+  font-size:13px;
+}
+
+.comments{
+  display:grid;
+  gap:8px;
+  margin-top:12px;
+}
+
+.comment{
+  padding:11px 13px;
+  border-radius:15px;
+  background:#fbf8fe;
+  border:1px solid var(--line);
+  font-size:13px;
+  line-height:1.55;
+}
+
+.commenthead{
+  font-weight:700;
+  color:#735985;
+}
+
+.commentdate{
+  font-size:10px;
+  color:var(--muted);
+  font-weight:400;
+  margin-left:7px;
+}
+
+.namebtn{
+  background:transparent;
+  border:0;
+  padding:5px 0;
+  color:#9b879f;
+  font-size:10px;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:0 18px 45px;
+  color:#aa99ae;
+  font:14px Caveat,cursive;
+}
+
+@media(max-width:620px){
+  header{
+    padding-top:43px;
+  }
+
+  .authgrid{
+    grid-template-columns:1fr;
+  }
+
+  .topbar{
+    align-items:flex-start;
+  }
+
+  .auth{
+    flex-direction:column;
+    align-items:flex-end;
+  }
+
+  .editorfooter{
+    align-items:flex-end;
+    flex-direction:column;
+  }
+
+  .toolbar{
+    align-items:stretch;
+  }
+
+  .post{
+    padding:21px;
+  }
+
+  .post h2{
+    font-size:28px;
+  }
+
+  .commentbox{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
 <body>
-<header><div class="heart">🤍🌸</div><h1>Messages for My Baby</h1><div class="sub">Things I wanted to tell you, but didn't.</div></header>
+
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+<div class="petal p5"></div>
+
+<header>
+  <div class="branch">🌸　🌸　🌸</div>
+
+  <h1>Messages for My Baby</h1>
+
+  <div class="subtitle">
+    little pieces of my day, saved here for you 🤍
+  </div>
+
+  <p class="intro">
+    For all the “BABY, GUESS WHAT—” moments that I wanted to tell you,
+    even when I didn't send the message.
+  </p>
+</header>
+
 <main class="wrap">
-<section class="editor" id="composer">
-<input id="title" maxlength="100" placeholder="A little thought for Baby…">
-<textarea id="body" placeholder="Baby, today I wanted to tell you…"></textarea>
-<div class="filepick">
-<label for="attachments">📎 Add photos, audio, videos or files</label>
-<input id="attachments" type="file" multiple>
-</div>
-<div id="filelist" class="filelist"></div>
-<div class="meta"><span>Stored securely in your account.</span><span><button class="soft" id="clear">Clear</button> <button class="primary" id="save">Save message 🤍</button></span></div>
-<div id="saveStatus" class="status"></div>
-</section>
-<div class="actions"><input class="search" id="search" placeholder="Search your messages…"><button class="soft" id="export">Export</button><label class="file soft" for="import">Import</label><input class="hidden" id="import" type="file" accept=".json"></div>
-<section id="posts" class="posts"></section>
+
+  <div class="card topbar">
+    <div class="tinybrand">
+      my little corner 🌸
+    </div>
+
+    <div class="auth">
+      <span id="userStatus">
+        Public journal · anyone with the link can view
+      </span>
+
+      <button class="soft" id="loginBtn">
+        Owner sign in
+      </button>
+
+      <button class="ghost" id="logoutBtn" style="display:none">
+        Sign out
+      </button>
+    </div>
+  </div>
+
+
+  <section class="card authpanel" id="authPanel">
+
+    <div class="kicker">
+      owner access
+    </div>
+
+    <h2 style="font:700 30px Caveat,cursive;color:#6f568f;margin:4px 0 8px">
+      Welcome back 🤍
+    </h2>
+
+    <div class="authgrid">
+
+      <input
+        class="field"
+        id="email"
+        type="email"
+        placeholder="Your email"
+      >
+
+      <input
+        class="field"
+        id="password"
+        type="password"
+        placeholder="Your password"
+      >
+
+    </div>
+
+    <div class="authactions">
+
+      <button class="primary" id="signin">
+        Sign in
+      </button>
+
+      <button class="soft" id="signup">
+        Create account
+      </button>
+
+      <button class="ghost" id="closeAuth">
+        Close
+      </button>
+
+    </div>
+
+    <div class="note" id="authMessage">
+      This login is only for you.
+      Visitors do not need an account to read, react, or comment.
+    </div>
+
+  </section>
+
+
+  <section class="card editor" id="composer">
+
+    <div class="kicker">
+      a new little thought
+    </div>
+
+    <input
+      class="titleinput"
+      id="title"
+      maxlength="120"
+      placeholder="Baby, guess what…"
+    >
+
+    <textarea
+      id="body"
+      placeholder="Tell Baby everything you wanted to say…"
+    ></textarea>
+
+    <label class="filelabel" for="attachments">
+      📎 Add photos, audio, videos or files
+    </label>
+
+    <input
+      id="attachments"
+      type="file"
+      multiple
+    >
+
+    <div id="filelist" class="filelist"></div>
+
+    <div class="editorfooter">
+
+      <div>
+
+        <div class="status" id="saveStatus"></div>
+
+        <span style="font-size:10px;color:#aa9bab">
+          Your posts are saved to your owner account.
+        </span>
+
+      </div>
+
+      <div style="display:flex;gap:7px">
+
+        <button class="ghost" id="clear">
+          Clear
+        </button>
+
+        <button class="primary" id="save">
+          Save message 🤍
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="toolbar">
+
+    <input
+      class="search"
+      id="search"
+      placeholder="Search messages…"
+    >
+
+    <button class="soft" id="nameBtn">
+      Comment name
+    </button>
+
+  </div>
+
+
+  <section id="posts" class="posts"></section>
+
 </main>
-<footer>For all the “BABY, GUESS WHAT—” moments that never got sent. 🤍</footer>
+
+
+<footer>
+  Made with a little too much love, a few cherry blossoms,
+  and many “BABY, GUESS WHAT—” moments. 🌸🤍
+</footer>
+
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
-const SUPABASE_URL="https://botpymtjxkwfuxzzbprj.supabase.co";
-const SUPABASE_KEY="sb_publishable_qbZN_IgzgkCSqtarujiYAw_raquOF0A";
-const BUCKET="message-attachments";
-const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
-const $=s=>document.querySelector(s),title=$("#title"),body=$("#body"),posts=$("#posts"),search=$("#search"),attachments=$("#attachments"),filelist=$("#filelist"),saveStatus=$("#saveStatus");
-let msgs=[],filesByMessage=new Map(),editingId=null,viewer=null,owner=false;
 
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const fmtSize=n=>{n=Number(n||0);if(n<1024)return n+" B";if(n<1024**2)return (n/1024).toFixed(1)+" KB";if(n<1024**3)return (n/1024**2).toFixed(1)+" MB";return (n/1024**3).toFixed(1)+" GB"};
-const isImage=m=>/^image\//.test(m||""),isAudio=m=>/^audio\//.test(m||""),isVideo=m=>/^video\//.test(m||"");
+const SUPABASE_URL =
+  "https://botpymtjxkwfuxzzbprj.supabase.co";
 
-function visitorId(){
-let v=localStorage.getItem("baby_public_visitor_id");
-if(!v){v=crypto.randomUUID();localStorage.setItem("baby_public_visitor_id",v)}
-return v;
+const SUPABASE_KEY =
+  "sb_publishable_qbZN_IgzgkCSqtarujiYAw_raquOF0A";
+
+const BUCKET =
+  "message-attachments";
+
+const db =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+
+const $ = s => document.querySelector(s);
+
+const esc = s =>
+  String(s ?? "").replace(
+    /[&<>"']/g,
+    c => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    }[c])
+  );
+
+const size = n => {
+
+  n = Number(n || 0);
+
+  if(n < 1024)
+    return n + " B";
+
+  if(n < 1048576)
+    return (n / 1024).toFixed(1) + " KB";
+
+  if(n < 1073741824)
+    return (n / 1048576).toFixed(1) + " MB";
+
+  return (n / 1073741824).toFixed(1) + " GB";
+
+};
+
+
+const image = m =>
+  /^image\//.test(m || "");
+
+const audio = m =>
+  /^audio\//.test(m || "");
+
+const video = m =>
+  /^video\//.test(m || "");
+
+
+let user = null;
+let postsData = [];
+let atts = new Map();
+let editing = null;
+
+
+const visitor = () => {
+
+  let v =
+    localStorage.getItem(
+      "baby_visitor_id"
+    );
+
+  if(!v){
+
+    v = crypto.randomUUID();
+
+    localStorage.setItem(
+      "baby_visitor_id",
+      v
+    );
+
+  }
+
+  return v;
+};
+
+
+const visitorName = () =>
+  localStorage.getItem(
+    "baby_comment_name"
+  ) || "Anonymous";
+
+
+async function refreshAuth(){
+
+  const {data} =
+    await db.auth.getUser();
+
+  user =
+    data.user || null;
+
+  $("#composer")
+    .classList
+    .toggle("show", !!user);
+
+  $("#loginBtn").style.display =
+    user ? "none" : "inline-block";
+
+  $("#logoutBtn").style.display =
+    user ? "inline-block" : "none";
+
+  $("#userStatus").textContent =
+    user
+      ? `Signed in as ${user.email}`
+      : "Public journal · anyone with the link can view";
+
 }
-function visitorName(){
-return localStorage.getItem("baby_public_name")||"Anonymous";
-}
-function setPublicName(){
-const n=prompt("What name should appear on your comments?",visitorName());
-if(n!==null&&n.trim()){localStorage.setItem("baby_public_name",n.trim().slice(0,40));render()}
-}async function load(){
-  const {data:userData}=await supabase.auth.getUser();
-  viewer=userData?.user||null;
-  owner=!!viewer;
-  $("#composer").classList.toggle("hidden",!owner);
 
-  const {data,error}=await supabase
-    .from("messages")
-    .select("*")
-    .order("created_at",{ascending:false});
+
+async function load(){
+
+  await refreshAuth();
+
+  const {data,error} =
+    await db
+      .from("messages")
+      .select("*")
+      .order("created_at",{ascending:false});
 
   if(error){
-    posts.innerHTML='<div class="empty">Unable to load messages right now. 🤍</div>';
+
     console.error(error);
+
+    $("#posts").innerHTML =
+      '<div class="card empty">I couldn’t load the messages right now. 🤍</div>';
+
     return;
   }
 
-  msgs=data||[];
+  postsData =
+    data || [];
 
-  const {data:atts}=await supabase
-    .from("message_attachments")
-    .select("*");
 
-  filesByMessage=new Map();
-  (atts||[]).forEach(a=>{
-    if(!filesByMessage.has(a.message_id)) filesByMessage.set(a.message_id,[]);
-    filesByMessage.get(a.message_id).push(a);
+  const {data:a} =
+    await db
+      .from("message_attachments")
+      .select("*");
+
+  atts =
+    new Map();
+
+  (a || []).forEach(x => {
+
+    if(!atts.has(x.message_id))
+      atts.set(x.message_id,[]);
+
+    atts
+      .get(x.message_id)
+      .push(x);
+
   });
+
 
   render();
+
 }
 
-async function reactionsFor(messageId){
-  const {data}=await supabase
-    .from("public_message_reactions")
-    .select("emoji,visitor_id")
-    .eq("message_id",messageId);
-
-  return data||[];
-}
-
-async function commentsFor(messageId){
-  const {data}=await supabase
-    .from("public_message_comments")
-    .select("*")
-    .eq("message_id",messageId)
-    .order("created_at",{ascending:true});
-
-  return data||[];
-}
-
-async function renderCommunity(postEl,messageId){
-  const reactions=await reactionsFor(messageId);
-  const comments=await commentsFor(messageId);
-
-  const counts={};
-  reactions.forEach(r=>{
-    counts[r.emoji]=(counts[r.emoji]||0)+1;
-  });
-
-  const emojis=["❤️","😂","😭","🥹","🤍","👀","🌸","🤣"];
-
-  postEl.querySelector(".reacts").innerHTML=emojis.map(e=>{
-    const mine=reactions.some(r=>r.emoji===e&&r.visitor_id===visitorId());
-    return `<button class="react ${mine?"reacted":""}" data-emoji="${esc(e)}">${e} <small>${counts[e]||""}</small></button>`;
-  }).join("");
-
-  postEl.querySelector(".comments").innerHTML=comments.map(c=>`
-    <div class="comment">
-      <strong>${esc(c.display_name)}</strong>
-      <span class="commentdate">${new Date(c.created_at).toLocaleString()}</span>
-      <div>${esc(c.body)}</div>
-    </div>
-  `).join("");
-
-  postEl.querySelectorAll(".react").forEach(btn=>{
-    btn.onclick=async()=>{
-      const emoji=btn.dataset.emoji;
-      const vid=visitorId();
-      const existing=reactions.find(r=>r.emoji===emoji&&r.visitor_id===vid);
-
-      if(existing){
-        await supabase
-          .from("public_message_reactions")
-          .delete()
-          .eq("message_id",messageId)
-          .eq("visitor_id",vid)
-          .eq("emoji",emoji);
-      }else{
-        await supabase
-          .from("public_message_reactions")
-          .insert({
-            message_id:messageId,
-            visitor_id:vid,
-            emoji
-          });
-      }
-
-      renderCommunity(postEl,messageId);
-    };
-  });
-
-  postEl.querySelector(".comment-send").onclick=async()=>{
-    const box=postEl.querySelector(".comment-input");
-    const text=box.value.trim();
-    if(!text)return;
-
-    let name=visitorName();
-
-    if(name==="Anonymous"){
-      const entered=prompt("What name should appear on your comment?","Anonymous");
-      if(entered===null)return;
-      name=entered.trim().slice(0,40)||"Anonymous";
-      localStorage.setItem("baby_public_name",name);
-    }
-
-    const {error}=await supabase
-      .from("public_message_comments")
-      .insert({
-        message_id:messageId,
-        visitor_id:visitorId(),
-        display_name:name,
-        body:text
-      });
-
-    if(error){
-      alert("Couldn't post that comment. Please try again.");
-      console.error(error);
-      return;
-    }
-
-    box.value="";
-    renderCommunity(postEl,messageId);
-  };
-
-  postEl.querySelector(".change-name").onclick=setPublicName;
-}
 
 function attachmentHtml(a){
-  const {data}=supabase.storage.from(BUCKET).getPublicUrl(a.file_path);
-  const url=data.publicUrl;
-  const name=esc(a.file_name);
-  const type=a.mime_type||"";
 
-  if(isImage(type)){
-    return `<div class="attachment">
-      <img src="${url}" alt="${name}">
-      <a href="${url}" target="_blank" rel="noopener">${name}</a>
-    </div>`;
-  }
+  const {data} =
+    db.storage
+      .from(BUCKET)
+      .getPublicUrl(a.file_path);
 
-  if(isAudio(type)){
-    return `<div class="attachment">
-      <audio controls src="${url}"></audio>
-      <a href="${url}" target="_blank" rel="noopener">${name}</a>
-    </div>`;
-  }
+  const url =
+    data.publicUrl;
 
-  if(isVideo(type)){
-    return `<div class="attachment">
-      <video controls src="${url}"></video>
-      <a href="${url}" target="_blank" rel="noopener">${name}</a>
-    </div>`;
-  }
+  const name =
+    esc(a.file_name);
 
-  return `<div class="attachment">
-    📎 <a href="${url}" target="_blank" rel="noopener">${name}</a>
-    <span class="filelist">(${fmtSize(a.size_bytes)})</span>
-  </div>`;function render(){
-  const q=search.value.trim().toLowerCase();
+  const type =
+    a.mime_type || "";
 
-  const filtered=msgs.filter(m=>{
-    return !q ||
-      (m.title||"").toLowerCase().includes(q) ||
-      (m.body||"").toLowerCase().includes(q);
-  });
 
-  if(!filtered.length){
-    posts.innerHTML='<div class="empty">No messages yet. 🤍🌸</div>';
-    return;
-  }
-
-  posts.innerHTML=filtered.map(m=>{
-    const atts=filesByMessage.get(m.id)||[];
+  if(image(type)){
 
     return `
-      <article class="post" data-id="${m.id}">
-        <div class="date">${new Date(m.created_at).toLocaleString()}</div>
-        <h2>${esc(m.title)}</h2>
-        <p>${esc(m.body)}</p>
+      <div class="attachment">
 
-        ${atts.length
-          ? `<div class="attachments">${atts.map(attachmentHtml).join("")}</div>`
-          : ""}
+        <img
+          src="${url}"
+          alt="${name}"
+        >
 
-        ${owner ? `
-          <div class="actions">
-            <button class="soft edit">Edit</button>
-            <button class="soft delete">Delete</button>
-          </div>
-        ` : ""}
+        <a
+          href="${url}"
+          target="_blank"
+          rel="noopener"
+        >
+          ${name}
+        </a>
 
-        <div class="community">
-          <div class="reacts">Loading reactions…</div>
-
-          <div class="commentbox">
-            <textarea class="comment-input" placeholder="Leave a little message…"></textarea>
-            <button class="primary comment-send">Post</button>
-          </div>
-
-          <button class="tiny change-name">
-            Commenting as ${esc(visitorName())}
-          </button>
-
-          <div class="comments"></div>
-        </div>
-      </article>
+      </div>
     `;
-  }).join("");
 
-  filtered.forEach(m=>{
-    const el=posts.querySelector(`[data-id="${m.id}"]`);
+  }
+
+
+  if(audio(type)){
+
+    return `
+      <div class="attachment">
+
+        <audio
+          controls
+          src="${url}"
+        ></audio>
+
+        <a
+          href="${url}"
+          target="_blank"
+          rel="noopener"
+        >
+          ${name}
+        </a>
+
+      </div>
+    `;
+
+  }
+
+
+  if(video(type)){
+
+    return `
+      <div class="attachment">
+
+        <video
+          controls
+          src="${url}"
+        ></video>
+
+        <a
+          href="${url}"
+          target="_blank"
+          rel="noopener"
+        >
+          ${name}
+        </a>
+
+      </div>
+    `;
+
+  }
+
+
+  return `
+    <div class="attachment">
+
+      📎
+
+      <a
+        href="${url}"
+        target="_blank"
+        rel="noopener"
+      >
+        ${name}
+      </a>
+
+      <span style="font-size:10px;color:#a08fa5">
+        · ${size(a.size_bytes)}
+      </span>
+
+    </div>
+  `;
+
+}
+
+
+async function communityHtml(id){
+
+  const [r,c] =
+    await Promise.all([
+
+      db
+        .from("public_message_reactions")
+        .select("emoji,visitor_id")
+        .eq("message_id",id),
+
+      db
+        .from("public_message_comments")
+        .select("*")
+        .eq("message_id",id)
+        .order("created_at",{ascending:true})
+
+    ]);
+
+  return {
+    reactions:r.data || [],
+    comments:c.data || []
+  };
+
+}
+
+
+async function renderCommunity(el,id){
+
+  const {
+    reactions,
+    comments
+  } =
+    await communityHtml(id);
+
+
+  const counts = {};
+
+  reactions.forEach(x =>
+    counts[x.emoji] =
+      (counts[x.emoji] || 0) + 1
+  );
+
+
+  const mine =
+    new Set(
+      reactions
+        .filter(x =>
+          x.visitor_id === visitor()
+        )
+        .map(x => x.emoji)
+    );
+
+
+  const emojis = [
+    "❤️",
+    "😂",
+    "😭",
+    "🥹",
+    "🤍",
+    "👀",
+    "🌸",
+    "🤣"
+  ];
+
+
+  el.querySelector(".reacts").innerHTML =
+    emojis.map(e => `
+
+      <button
+        class="react ${mine.has(e) ? "active" : ""}"
+        data-e="${esc(e)}"
+      >
+        ${e}
+
+        <small>
+          ${counts[e] || ""}
+        </small>
+
+      </button>
+
+    `).join("");
+
+
+  el.querySelector(".comments").innerHTML =
+    comments.map(c => `
+
+      <div class="comment">
+
+        <div class="commenthead">
+
+          ${esc(c.display_name)}
+
+          <span class="commentdate">
+            ${new Date(c.created_at).toLocaleString()}
+          </span>
+
+        </div>
+
+        <div>
+          ${esc(c.body)}
+        </div>
+
+      </div>
+
+    `).join("");
+
+
+  el.querySelectorAll(".react")
+    .forEach(b =>
+      b.onclick = async () => {
+
+        const emoji =
+          b.dataset.e;
+
+        if(mine.has(emoji))
+          return;
+
+        const {error} =
+          await db
+            .from("public_message_reactions")
+            .insert({
+              message_id:id,
+              visitor_id:visitor(),
+              emoji
+            });
+
+        if(error)
+          console.error(error);
+
+        renderCommunity(el,id);
+
+      }
+    );
+
+
+  el.querySelector(".comment-send")
+    .onclick = async () => {
+
+      const box =
+        el.querySelector(".comment-input");
+
+      const text =
+        box.value.trim();
+
+      if(!text)
+        return;
+
+
+      let name =
+        visitorName();
+
+
+      if(name === "Anonymous"){
+
+        const entered =
+          prompt(
+            "What name should appear on your comment?",
+            "Anonymous"
+          );
+
+        if(entered === null)
+          return;
+
+        name =
+          (entered.trim() || "Anonymous")
+            .slice(0,40);
+
+        localStorage.setItem(
+          "baby_comment_name",
+          name
+        );
+
+      }
+
+
+      const {error} =
+        await db
+          .from("public_message_comments")
+          .insert({
+            message_id:id,
+            visitor_id:visitor(),
+            display_name:name,
+            body:text
+          });
+
+
+      if(error){
+
+        alert(
+          "Couldn’t post that comment. Please try again."
+        );
+
+        console.error(error);
+
+        return;
+      }
+
+
+      box.value = "";
+
+      renderCommunity(el,id);
+
+    };
+
+}
+
+
+function render(){
+
+  const q =
+    $("#search")
+      .value
+      .trim()
+      .toLowerCase();
+
+
+  const list =
+    postsData.filter(m =>
+      !q ||
+      (m.title || "")
+        .toLowerCase()
+        .includes(q) ||
+      (m.body || "")
+        .toLowerCase()
+        .includes(q)
+    );
+
+
+  if(!list.length){
+
+    $("#posts").innerHTML =
+      '<div class="card empty">No messages here yet. 🌸🤍</div>';
+
+    return;
+
+  }
+
+
+  $("#posts").innerHTML =
+    list.map(m => {
+
+      const files =
+        atts.get(m.id) || [];
+
+
+      return `
+
+        <article
+          class="card post"
+          data-id="${m.id}"
+        >
+
+          <div class="date">
+            ${new Date(m.created_at).toLocaleString()}
+          </div>
+
+          <h2>
+            ${esc(m.title)}
+          </h2>
+
+          <div class="postbody">
+            ${esc(m.body)}
+          </div>
+
+          ${
+            files.length
+              ? `
+                <div class="attachments">
+                  ${files.map(attachmentHtml).join("")}
+                </div>
+              `
+              : ""
+          }
+
+          ${
+            user
+              ? `
+                <div class="posttools">
+
+                  <button class="soft edit">
+                    Edit
+                  </button>
+
+                  <button class="ghost delete">
+                    Delete
+                  </button>
+
+                </div>
+              `
+              : ""
+          }
+
+          <div class="community">
+
+            <div class="reacttitle">
+              Leave a little love
+            </div>
+
+            <div class="reacts">
+              Loading…
+            </div>
+
+            <div class="commentbox">
+
+              <textarea
+                class="comment-input"
+                placeholder="Leave a little message…"
+              ></textarea>
+
+              <button class="primary comment-send">
+                Post
+              </button>
+
+            </div>
+
+            <button class="namebtn namechange">
+              Commenting as ${esc(visitorName())} · change
+            </button>
+
+            <div class="comments"></div>
+
+          </div>
+
+        </article>
+
+      `;
+
+    }).join("");
+
+
+  list.forEach(m => {
+
+    const el =
+      document.querySelector(
+        `[data-id="${m.id}"]`
+      );
+
+
     renderCommunity(el,m.id);
 
-    if(owner){
-      el.querySelector(".edit").onclick=()=>startEdit(m);
 
-      el.querySelector(".delete").onclick=async()=>{
-        if(!confirm("Delete this message?"))return;
+    if(user){
 
-        const atts=filesByMessage.get(m.id)||[];
+      el.querySelector(".edit")
+        .onclick =
+          () => startEdit(m);
 
-        if(atts.length){
-          await supabase.storage
-            .from(BUCKET)
-            .remove(atts.map(a=>a.file_path));
 
-          await supabase
+      el.querySelector(".delete")
+        .onclick = async () => {
+
+          if(!confirm("Delete this message?"))
+            return;
+
+
+          const files =
+            atts.get(m.id) || [];
+
+
+          if(files.length){
+
+            await db.storage
+              .from(BUCKET)
+              .remove(
+                files.map(x =>
+                  x.file_path
+                )
+              );
+
+          }
+
+
+          await db
             .from("message_attachments")
             .delete()
             .eq("message_id",m.id);
-        }
 
-        await supabase
-          .from("messages")
-          .delete()
-          .eq("id",m.id);
 
-        load();
-      };
+          await db
+            .from("messages")
+            .delete()
+            .eq("id",m.id)
+            .eq("user_id",user.id);
+
+
+          load();
+
+        };
+
     }
+
+
+    el.querySelector(".namechange")
+      .onclick =
+        changeName;
+
   });
+
 }
+
+
+function changeName(){
+
+  const n =
+    prompt(
+      "What name should appear on your comments?",
+      visitorName()
+    );
+
+
+  if(
+    n !== null &&
+    n.trim()
+  ){
+
+    localStorage.setItem(
+      "baby_comment_name",
+      n.trim().slice(0,40)
+    );
+
+    render();
+
+  }
+
+}
+
 
 function startEdit(m){
-  editingId=m.id;
-  title.value=m.title||"";
-  body.value=m.body||"";
-  $("#save").textContent="Update message 🤍";
-  window.scrollTo({top:0,behavior:"smooth"});
+
+  editing =
+    m.id;
+
+  $("#title").value =
+    m.title || "";
+
+  $("#body").value =
+    m.body || "";
+
+  $("#save").textContent =
+    "Update message 🤍";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
-attachments.onchange=()=>{
-  const files=[...attachments.files];
 
-  filelist.innerHTML=files.length
-    ? files.map(f=>`📎 ${esc(f.name)} (${fmtSize(f.size)})`).join("<br>")
-    : "";
-};
+async function uploadFiles(id,files){
 
-$("#clear").onclick=()=>{
-  editingId=null;
-  title.value="";
-  body.value="";
-  attachments.value="";
-  filelist.innerHTML="";
-  $("#save").textContent="Save message 🤍";
-  saveStatus.textContent="";
-};
+  for(const f of files){
 
-async function uploadAttachments(messageId,files){
-  for(const file of files){
-    const path=`${viewer.id}/${messageId}/${crypto.randomUUID()}-${file.name}`;
+    const path =
+      `${user.id}/${id}/${crypto.randomUUID()}-${f.name}`;
 
-    const {error}=await supabase.storage
-      .from(BUCKET)
-      .upload(path,file);
+
+    const {error} =
+      await db.storage
+        .from(BUCKET)
+        .upload(path,f);
+
 
     if(error){
+
       console.error(error);
+
       continue;
+
     }
 
-    await supabase
+
+    await db
       .from("message_attachments")
       .insert({
-        message_id:messageId,
-        user_id:viewer.id,
-        file_name:file.name,
+        message_id:id,
+        user_id:user.id,
+        file_name:f.name,
         file_path:path,
-        mime_type:file.type,
-        size_bytes:file.size
+        mime_type:f.type,
+        size_bytes:f.size
       });
+
   }
+
 }
 
-$("#save").onclick=async()=>{
-  if(!owner){
-    alert("Please sign in first.");
-    return;
-  }
 
-  const t=title.value.trim();
-  const b=body.value.trim();
+$("#loginBtn").onclick =
+  () =>
+    $("#authPanel")
+      .classList
+      .add("show");
 
-  if(!t||!b){
-    alert("Please add a title and message.");
-    return;
-  }
 
-  saveStatus.textContent="Saving… 🤍";
+$("#closeAuth").onclick =
+  () =>
+    $("#authPanel")
+      .classList
+      .remove("show");
 
-  let messageId=editingId;
 
-  if(editingId){
-    const {error}=await supabase
-      .from("messages")
-      .update({
-        title:t,
-        body:b,
-        updated_at:new Date().toISOString()
-      })
-      .eq("id",editingId)
-      .eq("user_id",viewer.id);
+$("#signin").onclick =
+  async () => {
 
-    if(error){
-      saveStatus.textContent="Couldn't update the message.";
-      console.error(error);
-      return;
-    }
-  }else{
-    const {data,error}=await supabase
-      .from("messages")
-      .insert({
-        user_id:viewer.id,
-        title:t,
-        body:b
-      })
-      .select()
-      .single();
+    const {error} =
+      await db.auth
+        .signInWithPassword({
+          email:
+            $("#email")
+              .value
+              .trim(),
 
-    if(error){
-      saveStatus.textContent="Couldn't save the message.";
-      console.error(error);
-      return;
-    }
-
-    messageId=data.id;
-  }
-
-  if(attachments.files.length){
-    await uploadAttachments(messageId,[...attachments.files]);
-  }
-
-  $("#clear").click();
-  saveStatus.textContent="Saved! 🤍";
-  await load();
-};
-
-search.oninput=render;
-
-$("#export").onclick=()=>{
-  const blob=new Blob(
-    [JSON.stringify(msgs,null,2)],
-    {type:"application/json"}
-  );
-
-  const a=document.createElement("a");
-  a.href=URL.createObjectURL(blob);
-  a.download="messages-for-my-baby-backup.json";
-  a.click();
-  URL.revokeObjectURL(a.href);
-};
-
-$("#import").onchange=async e=>{
-  if(!owner){
-    alert("Please sign in first.");
-    return;
-  }
-
-  const file=e.target.files[0];
-  if(!file)return;
-
-  try{
-    const imported=JSON.parse(await file.text());
-
-    if(!Array.isArray(imported)){
-      throw new Error("Invalid backup");
-    }
-
-    for(const m of imported){
-      if(!m.title||!m.body)continue;
-
-      await supabase
-        .from("messages")
-        .insert({
-          user_id:viewer.id,
-          title:m.title,
-          body:m.body
+          password:
+            $("#password")
+              .value
         });
+
+
+    $("#authMessage").textContent =
+      error
+        ? error.message
+        : "Signed in! 🤍";
+
+
+    if(!error){
+
+      $("#authPanel")
+        .classList
+        .remove("show");
+
+      load();
+
     }
 
-    await load();
-    alert("Messages imported! 🤍");
-  }catch(err){
-    console.error(err);
-    alert("That backup file couldn't be imported.");
-  }
+  };
 
-  e.target.value="";
-};
+
+$("#signup").onclick =
+  async () => {
+
+    const {error} =
+      await db.auth
+        .signUp({
+          email:
+            $("#email")
+              .value
+              .trim(),
+
+          password:
+            $("#password")
+              .value
+        });
+
+
+    $("#authMessage").textContent =
+      error
+        ? error.message
+        : "Account created! Check your email if confirmation is required. 🌸";
+
+  };
+
+
+$("#logoutBtn").onclick =
+  async () => {
+
+    await db.auth.signOut();
+
+    load();
+
+  };
+
+
+$("#attachments").onchange =
+  () => {
+
+    const f =
+      [...$("#attachments").files];
+
+
+    $("#filelist").innerHTML =
+      f.length
+        ? f.map(x =>
+            `📎 ${esc(x.name)} · ${size(x.size)}`
+          ).join("<br>")
+        : "";
+
+  };
+
+
+$("#clear").onclick =
+  () => {
+
+    editing = null;
+
+    $("#title").value = "";
+
+    $("#body").value = "";
+
+    $("#attachments").value = "";
+
+    $("#filelist").innerHTML = "";
+
+    $("#save").textContent =
+      "Save message 🤍";
+
+    $("#saveStatus").textContent =
+      "";
+
+  };
+
+
+$("#save").onclick =
+  async () => {
+
+    if(!user)
+      return;
+
+
+    const title =
+      $("#title")
+        .value
+        .trim();
+
+    const body =
+      $("#body")
+        .value
+        .trim();
+
+
+    if(!title || !body){
+
+      alert(
+        "Please add a title and message."
+      );
+
+      return;
+
+    }
+
+
+    $("#saveStatus").textContent =
+      "Saving… 🤍";
+
+
+    let id = editing;
+
+    let error;
+
+
+    if(editing){
+
+      ({error} =
+        await db
+          .from("messages")
+          .update({
+            title,
+            body,
+            updated_at:
+              new Date()
+                .toISOString()
+          })
+          .eq("id",editing)
+          .eq("user_id",user.id)
+      );
+
+    }else{
+
+      const res =
+        await db
+          .from("messages")
+          .insert({
+            user_id:user.id,
+            title,
+            body
+          })
+          .select()
+          .single();
+
+
+      error =
+        res.error;
+
+      id =
+        res.data?.id;
+
+    }
+
+
+    if(error){
+
+      $("#saveStatus").textContent =
+        "Couldn’t save that message.";
+
+      console.error(error);
+
+      return;
+
+    }
+
+
+    if($("#attachments").files.length){
+
+      await uploadFiles(
+        id,
+        [...$("#attachments").files]
+      );
+
+    }
+
+
+    $("#clear").click();
+
+    $("#saveStatus").textContent =
+      "Saved! 🤍";
+
+    load();
+
+  };
+
+
+$("#search").oninput =
+  render;
+
+
+$("#nameBtn").onclick =
+  changeName;
+
+
+db.auth.onAuthStateChange(
+  () => setTimeout(load,0)
+);
+
 
 load();
+
 </script>
+
 </body>
 </html>
-}

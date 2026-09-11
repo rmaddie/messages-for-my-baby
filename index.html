@@ -981,12 +981,11 @@ async function renderCommunity(el,id){
       const emoji=b.dataset.e;
 
       if(mine.has(emoji)){
-  const {error}=await db
-    .from("public_message_reactions")
-    .delete()
-    .eq("message_id",id)
-    .eq("visitor_id",visitor())
-    .eq("emoji",emoji);
+  const {error}=await db.rpc("delete_my_reaction",{
+  p_message_id:id,
+  p_visitor_id:visitor(),
+  p_emoji:emoji
+});
 
   if(error){
     console.error(error);

@@ -977,6 +977,7 @@ async function renderCommunity(el,id){
   });
 
   el.querySelectorAll(".react").forEach(b=>{
+  el.querySelectorAll(".react").forEach(b=>{
   b.onclick=async()=>{
     const emoji=b.dataset.e;
 
@@ -1011,31 +1012,6 @@ async function renderCommunity(el,id){
     await renderCommunity(el,id);
   };
 });
-
-  if(error){
-    console.error(error);
-    alert("Couldn’t remove that reaction.");
-    return;
-  }
-}else{
-  const {error}=await db
-    .from("public_message_reactions")
-    .insert({
-      message_id:id,
-      visitor_id:visitor(),
-      emoji
-    });
-
-  if(error){
-    console.error(error);
-    alert("Couldn’t add that reaction.");
-    return;
-  }
-}
-
-renderCommunity(el,id);
-    };
-  });
 
   el.querySelector(".comment-send").onclick=async()=>{
     const box=el.querySelector(".comment-input");

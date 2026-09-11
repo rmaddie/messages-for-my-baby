@@ -104,39 +104,51 @@ body:after{
   left:-35px;
   width:285px;
   height:390px;
-  transform:rotate(-5deg);
   opacity:.95;
 }
 
-.branch-art:before{
-  content:"";
-  position:absolute;
-  left:58px;
-  top:-55px;
-  width:28px;
-  height:470px;
-  background:linear-gradient(90deg,#76516a,#b78391 55%,#6e5068);
-  border-radius:50%;
-  transform:rotate(32deg);
-  box-shadow:42px 125px 0 -9px #987083;
+.branch-art svg{
+  width:100%;
+  height:100%;
+  overflow:visible;
 }
 
-.branch-art:after{
-  content:"🌸 🌸 🌸\A 🌸 🌸\A 🌸 🌸 🌸";
-  white-space:pre;
-  position:absolute;
-  left:0;
-  top:0;
-  font-size:48px;
-  line-height:1.25;
-  letter-spacing:-13px;
-  filter:drop-shadow(0 3px 4px rgba(150,90,130,.15));
+.branch-art .twig{
+  fill:none;
+  stroke:#806070;
+  stroke-width:15;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.branch-art .blossoms circle{
+  fill:#f3b9d0;
+  stroke:#e4a0bc;
+  stroke-width:1;
+}
+
+.branch-art .blossoms .center{
+  fill:#d995b1;
+  stroke:none;
 }
 
 .branch-art.right{
   left:auto;
   right:-65px;
-  transform:scaleX(-1) rotate(-4deg);
+  transform:scaleX(-1);
+}
+
+@media(max-width:620px){
+  .branch-art{
+    transform:scale(.72);
+    transform-origin:top left;
+    opacity:.72;
+  }
+
+  .branch-art.right{
+    transform:scaleX(-1) scale(.72);
+    transform-origin:top right;
+  }
 }
 
 @media(max-width:620px){
@@ -602,8 +614,117 @@ footer{
 
 <body>
 
-<div class="branch-art" aria-hidden="true"></div>
-<div class="branch-art right" aria-hidden="true"></div>
+<div class="branch-art" aria-hidden="true">
+  <svg viewBox="0 0 320 430" role="presentation">
+    <path class="twig" d="M75 430 C85 310 120 230 165 155 C195 105 220 45 230 0"/>
+    <path class="twig" d="M112 300 C65 245 42 180 30 105"/>
+    <path class="twig" d="M145 205 C205 190 255 145 292 82"/>
+    <path class="twig" d="M94 345 C165 315 230 315 300 270"/>
+
+    <g class="blossoms">
+      <g transform="translate(30 105)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+
+      <g transform="translate(165 155)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+
+      <g transform="translate(230 48)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+
+      <g transform="translate(292 82)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+
+      <g transform="translate(300 270)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+    </g>
+  </svg>
+</div>
+
+<div class="branch-art right" aria-hidden="true">
+  <svg viewBox="0 0 320 430" role="presentation">
+    <path class="twig" d="M75 430 C85 310 120 230 165 155 C195 105 220 45 230 0"/>
+    <path class="twig" d="M112 300 C65 245 42 180 30 105"/>
+    <path class="twig" d="M145 205 C205 190 255 145 292 82"/>
+    <path class="twig" d="M94 345 C165 315 230 315 300 270"/>
+
+    <g class="blossoms">
+      <g transform="translate(30 105)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+
+      <g transform="translate(165 155)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+
+      <g transform="translate(230 48)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+
+      <g transform="translate(292 82)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+
+      <g transform="translate(300 270)">
+        <circle cx="0" cy="-13" r="10"/>
+        <circle cx="13" cy="-3" r="10"/>
+        <circle cx="8" cy="12" r="10"/>
+        <circle cx="-8" cy="12" r="10"/>
+        <circle cx="-13" cy="-3" r="10"/>
+        <circle class="center" cx="0" cy="0" r="5"/>
+      </g>
+    </g>
+  </svg>
+</div>
 <div id="petals" aria-hidden="true"></div>
 
 <header>
@@ -977,7 +1098,6 @@ async function renderCommunity(el,id){
   });
 
   el.querySelectorAll(".react").forEach(b=>{
-  el.querySelectorAll(".react").forEach(b=>{
   b.onclick=async()=>{
     const emoji=b.dataset.e;
 
@@ -989,8 +1109,8 @@ async function renderCommunity(el,id){
       });
 
       if(error){
-        console.error("Remove reaction error:",error);
-        alert("Couldn’t remove that reaction: "+error.message);
+        console.error(error);
+        alert("Couldn’t remove that reaction.");
         return;
       }
     }else{
@@ -1002,9 +1122,12 @@ async function renderCommunity(el,id){
           emoji
         });
 
-      if(error){
-        console.error("Add reaction error:",error);
-        alert("Couldn’t add that reaction: "+error.message);
+      if(
+        error &&
+        !String(error.message||"").includes("duplicate")
+      ){
+        console.error(error);
+        alert("Couldn’t add that reaction.");
         return;
       }
     }

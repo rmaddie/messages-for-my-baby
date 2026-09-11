@@ -10,13 +10,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{
-  --purple:#765a98;
-  --rose:#c986a8;
-  --ink:#51475b;
-  --muted:#988ea2;
-  --white:rgba(255,255,255,.9);
-  --line:rgba(133,105,157,.16);
-  --shadow:0 18px 55px rgba(92,67,115,.13);
+  --purple:#765a98;
+  --rose:#c986a8;
+  --ink:#51475b;
+  --muted:#988ea2;
+  --white:rgba(255,255,255,.9);
+  --line:rgba(133,105,157,.16);
+  --shadow:0 18px 55px rgba(92,67,115,.13);
 }
 
 *{box-sizing:border-box}
@@ -24,590 +24,604 @@
 html{scroll-behavior:smooth}
 
 body{
-  margin:0;
-  color:var(--ink);
-  font-family:"DM Sans",system-ui,sans-serif;
-  background:
-    radial-gradient(circle at 8% 8%,rgba(232,184,206,.32),transparent 24%),
-    radial-gradient(circle at 92% 18%,rgba(205,191,239,.48),transparent 28%),
-    linear-gradient(135deg,#eee7ff 0%,#e4d9fb 48%,#f7eafa 100%);
-  min-height:100vh;
-  overflow-x:hidden;
+  margin:0;
+  color:var(--ink);
+  font-family:"DM Sans",system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 8% 8%,rgba(232,184,206,.32),transparent 24%),
+    radial-gradient(circle at 92% 18%,rgba(205,191,239,.48),transparent 28%),
+    linear-gradient(135deg,#eee7ff 0%,#e4d9fb 48%,#f7eafa 100%);
+  min-height:100vh;
+  overflow-x:hidden;
 }
 
 body:before,
 body:after{
-  content:"";
-  position:fixed;
-  z-index:-1;
-  pointer-events:none;
-  opacity:.5;
-  width:230px;
-  height:230px;
-  background:
-    radial-gradient(circle at 35% 35%,#f3cddd 0 7px,transparent 8px),
-    radial-gradient(circle at 58% 25%,#ead0e3 0 6px,transparent 7px),
-    radial-gradient(circle at 72% 52%,#f1c9da 0 7px,transparent 8px),
-    radial-gradient(circle at 43% 65%,#ead2f0 0 6px,transparent 7px);
+  content:"";
+  position:fixed;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.5;
+  width:230px;
+  height:230px;
+  background:
+    radial-gradient(circle at 35% 35%,#f3cddd 0 7px,transparent 8px),
+    radial-gradient(circle at 58% 25%,#ead0e3 0 6px,transparent 7px),
+    radial-gradient(circle at 72% 52%,#f1c9da 0 7px,transparent 8px),
+    radial-gradient(circle at 43% 65%,#ead2f0 0 6px,transparent 7px);
 }
 
 body:before{
-  top:20px;
-  left:-90px;
-  transform:rotate(-18deg);
+  top:20px;
+  left:-90px;
+  transform:rotate(-18deg);
 }
 
 body:after{
-  right:-90px;
-  bottom:80px;
-  transform:rotate(24deg);
+  right:-90px;
+  bottom:80px;
+  transform:rotate(24deg);
 }
 
 /* Falling petals */
 
 .petal{
-  position:fixed;
-  top:-35px;
-  z-index:5;
-  pointer-events:none;
-  width:14px;
-  height:10px;
-  background:linear-gradient(135deg,#ffd4e6,#e99abb);
-  border-radius:90% 10% 90% 10%;
-  opacity:.75;
-  filter:drop-shadow(0 2px 3px rgba(160,105,150,.12));
-  animation:fall linear infinite;
+  position:fixed;
+  top:-35px;
+  z-index:5;
+  pointer-events:none;
+  width:14px;
+  height:10px;
+  background:linear-gradient(135deg,#ffd4e6,#e99abb);
+  border-radius:90% 10% 90% 10%;
+  opacity:.75;
+  filter:drop-shadow(0 2px 3px rgba(160,105,150,.12));
+  animation:fall linear infinite;
 }
 
 @keyframes fall{
-  0%{
-    transform:translate3d(0,-40px,0) rotate(0deg);
-    opacity:0;
-  }
-  10%{opacity:.78}
-  50%{
-    transform:translate3d(55px,55vh,0) rotate(260deg);
-  }
-  100%{
-    transform:translate3d(-80px,112vh,0) rotate(620deg);
-    opacity:0;
-  }
+  0%{
+    transform:translate3d(0,-40px,0) rotate(0deg);
+    opacity:0;
+  }
+
+  10%{opacity:.78}
+
+  50%{
+    transform:translate3d(55px,55vh,0) rotate(260deg);
+  }
+
+  100%{
+    transform:translate3d(-80px,112vh,0) rotate(620deg);
+    opacity:0;
+  }
 }
 
-/* Sakura branches */
+/* Soft Sakura branches */
 
 .branch-art{
-  position:fixed;
-  z-index:1;
-  pointer-events:none;
-  top:0;
-  left:-35px;
-  width:285px;
-  height:390px;
-  opacity:.95;
+  position:fixed;
+  z-index:0;
+  pointer-events:none;
+  top:-35px;
+  left:-105px;
+  width:260px;
+  height:350px;
+  opacity:.48;
 }
 
 .branch-art svg{
-  width:100%;
-  height:100%;
-  overflow:visible;
+  width:100%;
+  height:100%;
+  overflow:visible;
 }
 
 .branch-main{
-  fill:none;
-  stroke:#77566b;
-  stroke-width:18;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+  fill:none;
+  stroke:#a88b9c;
+  stroke-width:8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
 .branch-small{
-  fill:none;
-  stroke:#896477;
-  stroke-width:9;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+  fill:none;
+  stroke:#b99bad;
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
 .flower circle{
-  fill:#f4bfd5;
-  stroke:#e5a8c2;
-  stroke-width:1.5;
+  fill:#f8d9e6;
+  stroke:#efc1d5;
+  stroke-width:1;
 }
 
 .flower .flower-center{
-  fill:#d88cae;
-  stroke:none;
+  fill:#e7aec7;
+  stroke:none;
 }
 
 .branch-art.right{
-  left:auto;
-  right:-65px;
-  transform:scaleX(-1);
+  left:auto;
+  right:-105px;
+  transform:scaleX(-1);
+  opacity:.38;
 }
 
 @media(max-width:620px){
-  .branch-art{
-    width:250px;
-    height:330px;
-    left:-55px;
-    transform:scale(.72);
-    transform-origin:top left;
-    opacity:.7;
-  }
+  .branch-art{
+    width:220px;
+    height:300px;
+    top:-25px;
+    left:-105px;
+    opacity:.38;
+  }
 
-  .branch-art.right{
-    left:auto;
-    right:-55px;
-    transform:scaleX(-1) scale(.72);
-    transform-origin:top right;
-  }
+  .branch-art.right{
+    left:auto;
+    right:-105px;
+    transform:scaleX(-1);
+    opacity:.3;
+  }
 }
 
 header{
-  padding:58px 18px 30px;
-  text-align:center;
-  position:relative;
+  padding:58px 18px 30px;
+  text-align:center;
+  position:relative;
 }
 
 .branch{
-  font-size:34px;
-  letter-spacing:9px;
-  opacity:.72;
+  font-size:34px;
+  letter-spacing:9px;
+  opacity:.72;
 }
 
 h1{
-  margin:4px 0 2px;
-  font-family:Caveat,cursive;
-  font-size:clamp(48px,10vw,76px);
-  font-weight:700;
-  line-height:1;
-  color:#6f568f;
+  margin:4px 0 2px;
+  font-family:Caveat,cursive;
+  font-size:clamp(48px,10vw,76px);
+  font-weight:700;
+  line-height:1;
+  color:#6f568f;
 }
 
 .subtitle{
-  font-family:Caveat,cursive;
-  font-size:25px;
-  color:#a07d99;
-  margin-top:7px;
+  font-family:Caveat,cursive;
+  font-size:25px;
+  color:#a07d99;
+  margin-top:7px;
 }
 
 .intro{
-  max-width:650px;
-  margin:12px auto 0;
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.7;
+  max-width:650px;
+  margin:12px auto 0;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.7;
 }
 
 .wrap{
-  width:min(940px,92%);
-  margin:auto;
+  width:min(940px,92%);
+  margin:auto;
 }
 
 .card{
-  background:var(--white);
-  backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,.85);
-  box-shadow:var(--shadow);
-  border-radius:28px;
+  background:var(--white);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:var(--shadow);
+  border-radius:28px;
 }
 
 .topbar{
-  padding:13px 17px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-bottom:18px;
+  padding:13px 17px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
 }
 
 .tinybrand{
-  font-family:Caveat,cursive;
-  font-size:23px;
-  color:var(--purple);
+  font-family:Caveat,cursive;
+  font-size:23px;
+  color:var(--purple);
 }
 
 .auth{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
 }
 
 button,
 .filelabel{
-  border:0;
-  border-radius:999px;
-  padding:10px 15px;
-  cursor:pointer;
-  font:600 12px "DM Sans",sans-serif;
-  transition:.2s transform,.2s box-shadow;
+  border:0;
+  border-radius:999px;
+  padding:10px 15px;
+  cursor:pointer;
+  font:600 12px "DM Sans",sans-serif;
+  transition:.2s transform,.2s box-shadow;
 }
 
 button:hover,
 .filelabel:hover{
-  transform:translateY(-1px);
+  transform:translateY(-1px);
 }
 
 .primary{
-  background:linear-gradient(135deg,#9a7cb8,#c28aa8);
-  color:#fff;
-  box-shadow:0 7px 18px rgba(139,102,153,.2);
+  background:linear-gradient(135deg,#9a7cb8,#c28aa8);
+  color:#fff;
+  box-shadow:0 7px 18px rgba(139,102,153,.2);
 }
 
 .soft{
-  background:#eee8f9;
-  color:#71578e;
+  background:#eee8f9;
+  color:#71578e;
 }
 
 .ghost{
-  background:transparent;
-  color:#806c91;
-  border:1px solid var(--line);
+  background:transparent;
+  color:#806c91;
+  border:1px solid var(--line);
 }
 
 #userStatus{
-  font-size:12px;
-  color:var(--muted);
+  font-size:12px;
+  color:var(--muted);
 }
 
 .authpanel{
-  padding:20px;
-  margin-bottom:20px;
-  display:none;
+  padding:20px;
+  margin-bottom:20px;
+  display:none;
 }
 
 .authpanel.show{
-  display:block;
+  display:block;
 }
 
 .authgrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
 
 .field{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid var(--line);
-  border-radius:15px;
-  background:#fff;
-  color:var(--ink);
-  outline:none;
-  font:14px "DM Sans",sans-serif;
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+  font:14px "DM Sans",sans-serif;
 }
 
 .authactions{
-  display:flex;
-  gap:8px;
-  margin-top:10px;
-  flex-wrap:wrap;
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+  flex-wrap:wrap;
 }
 
 .note{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:9px;
+  font-size:11px;
+  color:var(--muted);
+  margin-top:9px;
 }
 
 .editor{
-  padding:25px;
-  margin-bottom:22px;
-  display:none;
+  padding:25px;
+  margin-bottom:22px;
+  display:none;
 }
 
 .editor.show{
-  display:block;
+  display:block;
 }
 
 .kicker{
-  font-size:11px;
-  letter-spacing:1.7px;
-  text-transform:uppercase;
-  color:var(--rose);
-  font-weight:700;
+  font-size:11px;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  color:var(--rose);
+  font-weight:700;
 }
 
 textarea{
-  width:100%;
-  border:0;
-  outline:0;
-  background:transparent;
-  color:var(--ink);
-  font:16px/1.8 "DM Sans",sans-serif;
-  resize:vertical;
-  min-height:145px;
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:var(--ink);
+  font:16px/1.8 "DM Sans",sans-serif;
+  resize:vertical;
+  min-height:145px;
 }
 
 .editorfooter{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  border-top:1px solid var(--line);
-  padding-top:13px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border-top:1px solid var(--line);
+  padding-top:13px;
 }
 
 .filelabel{
-  background:#f1ebfa;
-  color:#755b90;
-  display:inline-block;
+  background:#f1ebfa;
+  color:#755b90;
+  display:inline-block;
 }
 
 input[type=file]{
-  display:none;
+  display:none;
 }
 
 .filelist{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:8px;
-  line-height:1.7;
+  font-size:11px;
+  color:var(--muted);
+  margin-top:8px;
+  line-height:1.7;
 }
 
 .status{
-  font-size:11px;
-  color:var(--muted);
-  min-height:18px;
-  margin-top:8px;
+  font-size:11px;
+  color:var(--muted);
+  min-height:18px;
+  margin-top:8px;
 }
 
 .toolbar{
-  display:flex;
-  gap:9px;
-  margin:0 0 18px;
-  align-items:center;
+  display:flex;
+  gap:9px;
+  margin:0 0 18px;
+  align-items:center;
 }
 
 .search{
-  flex:1;
-  min-width:0;
-  padding:12px 17px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.78);
-  outline:0;
-  font:13px "DM Sans",sans-serif;
-  color:var(--ink);
+  flex:1;
+  min-width:0;
+  padding:12px 17px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.78);
+  outline:0;
+  font:13px "DM Sans",sans-serif;
+  color:var(--ink);
 }
 
 .posts{
-  display:grid;
-  gap:19px;
-  padding-bottom:55px;
+  display:grid;
+  gap:19px;
+  padding-bottom:55px;
 }
 
 .empty{
-  text-align:center;
-  padding:55px 20px;
-  color:var(--muted);
-  font-size:13px;
+  text-align:center;
+  padding:55px 20px;
+  color:var(--muted);
+  font-size:13px;
 }
 
 .post{
-  padding:25px;
-  position:relative;
-  overflow:hidden;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
 }
 
 .post:before{
-  content:"🌸";
-  position:absolute;
-  right:19px;
-  top:13px;
-  font-size:25px;
-  opacity:.38;
+  content:"🌸";
+  position:absolute;
+  right:19px;
+  top:13px;
+  font-size:25px;
+  opacity:.38;
 }
 
 .date{
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  color:var(--rose);
-  font-weight:700;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--rose);
+  font-weight:700;
 }
 
 .postbody{
-  font-size:15px;
-  line-height:1.85;
-  white-space:pre-wrap;
-  color:#5d5365;
+  font-size:15px;
+  line-height:1.85;
+  white-space:pre-wrap;
+  color:#5d5365;
 }
 
 .posttools{
-  display:flex;
-  gap:7px;
-  margin-top:15px;
-  flex-wrap:wrap;
+  display:flex;
+  gap:7px;
+  margin-top:15px;
+  flex-wrap:wrap;
 }
 
 .attachments{
-  display:grid;
-  gap:10px;
-  margin-top:17px;
+  display:grid;
+  gap:10px;
+  margin-top:17px;
 }
 
 .attachment{
-  background:#fbf8fe;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:10px;
+  background:#fbf8fe;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:10px;
 }
 
 .attachment img,
 .attachment video{
-  display:block;
-  max-width:100%;
-  max-height:430px;
-  margin:auto;
-  border-radius:13px;
+  display:block;
+  max-width:100%;
+  max-height:430px;
+  margin:auto;
+  border-radius:13px;
 }
 
 .attachment audio{
-  width:100%;
+  width:100%;
 }
 
 .attachment a{
-  display:block;
-  color:#785e92;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:600;
-  margin-top:7px;
-  word-break:break-word;
+  display:block;
+  color:#785e92;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  margin-top:7px;
+  word-break:break-word;
 }
 
 .community{
-  margin-top:20px;
-  padding-top:17px;
-  border-top:1px solid var(--line);
+  margin-top:20px;
+  padding-top:17px;
+  border-top:1px solid var(--line);
 }
 
 .reacttitle{
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:1.3px;
-  color:var(--muted);
-  margin-bottom:8px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  color:var(--muted);
+  margin-bottom:8px;
 }
 
 .reacts{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
 }
 
 .react{
-  background:#fff;
-  border:1px solid var(--line);
-  padding:7px 10px;
-  color:#725b85;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:7px 10px;
+  color:#725b85;
 }
 
 .react.active{
-  background:#eee5fa;
-  border-color:#cdbce2;
+  background:#eee5fa;
+  border-color:#cdbce2;
 }
 
 .react small{
-  font-size:10px;
-  color:#9b879f;
-  margin-left:2px;
+  font-size:10px;
+  color:#9b879f;
+  margin-left:2px;
 }
 
 .commentbox{
-  display:flex;
-  gap:8px;
-  margin-top:12px;
+  display:flex;
+  gap:8px;
+  margin-top:12px;
 }
 
 .comment-input{
-  min-height:45px;
-  max-height:140px;
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:15px;
-  padding:10px 12px;
-  flex:1;
-  font-size:13px;
+  min-height:45px;
+  max-height:140px;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:15px;
+  padding:10px 12px;
+  flex:1;
+  font-size:13px;
 }
 
 .comments{
-  display:grid;
-  gap:8px;
-  margin-top:12px;
+  display:grid;
+  gap:8px;
+  margin-top:12px;
 }
 
 .comment{
-  padding:11px 13px;
-  border-radius:15px;
-  background:#fbf8fe;
-  border:1px solid var(--line);
-  font-size:13px;
-  line-height:1.55;
+  padding:11px 13px;
+  border-radius:15px;
+  background:#fbf8fe;
+  border:1px solid var(--line);
+  font-size:13px;
+  line-height:1.55;
 }
 
 .commenthead{
-  font-weight:700;
-  color:#735985;
+  font-weight:700;
+  color:#735985;
 }
 
 .commentdate{
-  font-size:10px;
-  color:var(--muted);
-  font-weight:400;
-  margin-left:7px;
+  font-size:10px;
+  color:var(--muted);
+  font-weight:400;
+  margin-left:7px;
 }
 
 .comment-delete{
-  float:right;
-  padding:4px 8px;
-  font-size:9px;
-  background:transparent;
-  color:#b58aa0;
-  border:1px solid var(--line);
+  float:right;
+  padding:4px 8px;
+  font-size:9px;
+  background:transparent;
+  color:#b58aa0;
+  border:1px solid var(--line);
 }
 
 .namebtn{
-  background:transparent;
-  border:0;
-  padding:5px 0;
-  color:#9b879f;
-  font-size:10px;
-  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:5px 0;
+  color:#9b879f;
+  font-size:10px;
+  cursor:pointer;
 }
 
 footer{
-  text-align:center;
-  padding:0 18px 45px;
-  color:#aa99ae;
-  font:14px Caveat,cursive;
+  text-align:center;
+  padding:0 18px 45px;
+  color:#aa99ae;
+  font:14px Caveat,cursive;
 }
 
 @media(max-width:620px){
-  header{padding-top:43px}
-  .authgrid{grid-template-columns:1fr}
-  .topbar{align-items:flex-start}
-  .auth{
-    flex-direction:column;
-    align-items:flex-end;
-  }
-  .editorfooter{
-    align-items:flex-end;
-    flex-direction:column;
-  }
-  .toolbar{
-    align-items:stretch;
-  }
-  .post{
-    padding:21px;
-  }
-  .commentbox{
-    flex-direction:column;
-  }
+  header{padding-top:43px}
+
+  .authgrid{
+    grid-template-columns:1fr;
+  }
+
+  .topbar{
+    align-items:flex-start;
+  }
+
+  .auth{
+    flex-direction:column;
+    align-items:flex-end;
+  }
+
+  .editorfooter{
+    align-items:flex-end;
+    flex-direction:column;
+  }
+
+  .toolbar{
+    align-items:stretch;
+  }
+
+  .post{
+    padding:21px;
+  }
+
+  .commentbox{
+    flex-direction:column;
+  }
 }
 </style>
 </head>
@@ -615,198 +629,183 @@ footer{
 <body>
 
 <div class="branch-art" aria-hidden="true">
-  <svg viewBox="0 0 360 460">
-    <path class="branch-main" d="M70 470 C75 350 110 255 175 175 C225 115 270 55 305 0"/>
-    <path class="branch-small" d="M125 285 C78 235 48 175 35 95"/>
-    <path class="branch-small" d="M170 180 C230 175 285 135 330 75"/>
-    <path class="branch-small" d="M105 365 C175 335 245 335 330 285"/>
+  <svg viewBox="0 0 360 460">
+    <path class="branch-main" d="M70 470 C75 350 110 255 175 175 C225 115 270 55 305 0"/>
+    <path class="branch-small" d="M125 285 C78 235 48 175 35 95"/>
+    <path class="branch-small" d="M170 180 C230 175 285 135 330 75"/>
 
-    <g class="flower" transform="translate(35 95)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
+    <g class="flower" transform="translate(35 95)">
+      <circle cx="0" cy="-14" r="13"/>
+      <circle cx="14" cy="0" r="13"/>
+      <circle cx="0" cy="14" r="13"/>
+      <circle cx="-14" cy="0" r="13"/>
+      <circle class="flower-center" r="6"/>
+    </g>
 
-    <g class="flower" transform="translate(175 175)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
+    <g class="flower" transform="translate(175 175)">
+      <circle cx="0" cy="-14" r="13"/>
+      <circle cx="14" cy="0" r="13"/>
+      <circle cx="0" cy="14" r="13"/>
+      <circle cx="-14" cy="0" r="13"/>
+      <circle class="flower-center" r="6"/>
+    </g>
 
-    <g class="flower" transform="translate(305 0)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
+    <g class="flower" transform="translate(305 0)">
+      <circle cx="0" cy="-14" r="13"/>
+      <circle cx="14" cy="0" r="13"/>
+      <circle cx="0" cy="14" r="13"/>
+      <circle cx="-14" cy="0" r="13"/>
+      <circle class="flower-center" r="6"/>
+    </g>
 
-    <g class="flower" transform="translate(330 75)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
-
-    <g class="flower" transform="translate(330 285)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
-  </svg>
+    <g class="flower" transform="translate(330 75)">
+      <circle cx="0" cy="-14" r="13"/>
+      <circle cx="14" cy="0" r="13"/>
+      <circle cx="0" cy="14" r="13"/>
+      <circle cx="-14" cy="0" r="13"/>
+      <circle class="flower-center" r="6"/>
+    </g>
+  </svg>
 </div>
 
 <div class="branch-art right" aria-hidden="true">
-  <svg viewBox="0 0 360 460">
-    <path class="branch-main" d="M70 470 C75 350 110 255 175 175 C225 115 270 55 305 0"/>
-    <path class="branch-small" d="M125 285 C78 235 48 175 35 95"/>
-    <path class="branch-small" d="M170 180 C230 175 285 135 330 75"/>
-    <path class="branch-small" d="M105 365 C175 335 245 335 330 285"/>
+  <svg viewBox="0 0 360 460">
+    <path class="branch-main" d="M70 470 C75 350 110 255 175 175 C225 115 270 55 305 0"/>
+    <path class="branch-small" d="M125 285 C78 235 48 175 35 95"/>
+    <path class="branch-small" d="M170 180 C230 175 285 135 330 75"/>
 
-    <g class="flower" transform="translate(35 95)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
+    <g class="flower" transform="translate(35 95)">
+      <circle cx="0" cy="-14" r="13"/>
+      <circle cx="14" cy="0" r="13"/>
+      <circle cx="0" cy="14" r="13"/>
+      <circle cx="-14" cy="0" r="13"/>
+      <circle class="flower-center" r="6"/>
+    </g>
 
-    <g class="flower" transform="translate(175 175)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
+    <g class="flower" transform="translate(175 175)">
+      <circle cx="0" cy="-14" r="13"/>
+      <circle cx="14" cy="0" r="13"/>
+      <circle cx="0" cy="14" r="13"/>
+      <circle cx="-14" cy="0" r="13"/>
+      <circle class="flower-center" r="6"/>
+    </g>
 
-    <g class="flower" transform="translate(305 0)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
+    <g class="flower" transform="translate(305 0)">
+      <circle cx="0" cy="-14" r="13"/>
+      <circle cx="14" cy="0" r="13"/>
+      <circle cx="0" cy="14" r="13"/>
+      <circle cx="-14" cy="0" r="13"/>
+      <circle class="flower-center" r="6"/>
+    </g>
 
-    <g class="flower" transform="translate(330 75)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
-
-    <g class="flower" transform="translate(330 285)">
-      <circle cx="0" cy="-14" r="13"/>
-      <circle cx="14" cy="0" r="13"/>
-      <circle cx="0" cy="14" r="13"/>
-      <circle cx="-14" cy="0" r="13"/>
-      <circle class="flower-center" r="6"/>
-    </g>
-  </svg>
+    <g class="flower" transform="translate(330 75)">
+      <circle cx="0" cy="-14" r="13"/>
+      <circle cx="14" cy="0" r="13"/>
+      <circle cx="0" cy="14" r="13"/>
+      <circle cx="-14" cy="0" r="13"/>
+      <circle class="flower-center" r="6"/>
+    </g>
+  </svg>
 </div>
+
 <div id="petals" aria-hidden="true"></div>
 
 <header>
-  <div class="branch">🌸　🌸　🌸</div>
-  <h1>Messages for My Baby</h1>
-  <div class="subtitle">little pieces of my day, saved here for you 🤍</div>
-  <p class="intro">
-    For all the “BABY, GUESS WHAT—” moments that I wanted to tell you,
-    even when I didn't send the message.
-  </p>
+  <div class="branch">🌸　🌸　🌸</div>
+  <h1>Messages for My Baby</h1>
+  <div class="subtitle">little pieces of my day, saved here for you 🤍</div>
+
+  <p class="intro">
+    For all the “BABY, GUESS WHAT—” moments that I wanted to tell you,
+    even when I didn't send the message.
+  </p>
 </header>
 
 <main class="wrap">
 
-  <div class="card topbar">
-    <div class="tinybrand">my little corner 🌸</div>
+  <div class="card topbar">
+    <div class="tinybrand">my little corner 🌸</div>
 
-    <div class="auth">
-      <span id="userStatus">
-        Public journal · anyone with the link can view
-      </span>
+    <div class="auth">
+      <span id="userStatus">
+        Public journal · anyone with the link can view
+      </span>
 
-      <button class="soft" id="loginBtn">
-        Owner sign in
-      </button>
+      <button class="soft" id="loginBtn">
+        Owner sign in
+      </button>
 
-      <button class="ghost" id="logoutBtn" style="display:none">
-        Sign out
-      </button>
-    </div>
-  </div>
+      <button class="ghost" id="logoutBtn" style="display:none">
+        Sign out
+      </button>
+    </div>
+  </div>
 
-  <section class="card authpanel" id="authPanel">
-    <div class="kicker">owner access</div>
+  <section class="card authpanel" id="authPanel">
+    <div class="kicker">owner access</div>
 
-    <h2 style="font:700 30px Caveat,cursive;color:#6f568f;margin:4px 0 8px">
-      Welcome back 🤍
-    </h2>
+    <h2 style="font:700 30px Caveat,cursive;color:#6f568f;margin:4px 0 8px">
+      Welcome back 🤍
+    </h2>
 
-    <div class="authgrid">
-      <input class="field" id="email" type="email" placeholder="Your email">
-      <input class="field" id="password" type="password" placeholder="Your password">
-    </div>
+    <div class="authgrid">
+      <input class="field" id="email" type="email" placeholder="Your email">
+      <input class="field" id="password" type="password" placeholder="Your password">
+    </div>
 
-    <div class="authactions">
-      <button class="primary" id="signin">Sign in</button>
-      <button class="soft" id="signup">Create account</button>
-      <button class="ghost" id="closeAuth">Close</button>
-    </div>
+    <div class="authactions">
+      <button class="primary" id="signin">Sign in</button>
+      <button class="soft" id="signup">Create account</button>
+      <button class="ghost" id="closeAuth">Close</button>
+    </div>
 
-    <div class="note" id="authMessage">
-      This login is only for you.
-      Visitors do not need an account to read, react, or comment.
-    </div>
-  </section>
+    <div class="note" id="authMessage">
+      This login is only for you.
+      Visitors do not need an account to read, react, or comment.
+    </div>
+  </section>
 
-  <section class="card editor" id="composer">
-    <div class="kicker">a new little thought</div>
+  <section class="card editor" id="composer">
+    <div class="kicker">a new little thought</div>
 
-    <textarea id="body" placeholder="Tell Baby everything you wanted to say…"></textarea>
+    <textarea id="body" placeholder="Tell Baby everything you wanted to say…"></textarea>
 
-    <label class="filelabel" for="attachments">
-      📎 Add photos, audio, videos or files
-    </label>
+    <label class="filelabel" for="attachments">
+      📎 Add photos, audio, videos or files
+    </label>
 
-    <input id="attachments" type="file" multiple>
+    <input id="attachments" type="file" multiple>
 
-    <div id="filelist" class="filelist"></div>
+    <div id="filelist" class="filelist"></div>
 
-    <div class="editorfooter">
-      <div>
-        <div class="status" id="saveStatus"></div>
-        <span style="font-size:10px;color:#aa9bab">
-          Your posts are saved to your owner account.
-        </span>
-      </div>
+    <div class="editorfooter">
+      <div>
+        <div class="status" id="saveStatus"></div>
 
-      <div style="display:flex;gap:7px">
-        <button class="ghost" id="clear">Clear</button>
-        <button class="primary" id="save">Save message 🤍</button>
-      </div>
-    </div>
-  </section>
+        <span style="font-size:10px;color:#aa9bab">
+          Your posts are saved to your owner account.
+        </span>
+      </div>
 
-  <div class="toolbar">
-    <input class="search" id="search" placeholder="Search messages…">
-    <button class="soft" id="nameBtn">Comment name</button>
-  </div>
+      <div style="display:flex;gap:7px">
+        <button class="ghost" id="clear">Clear</button>
+        <button class="primary" id="save">Save message 🤍</button>
+      </div>
+    </div>
+  </section>
 
-  <section id="posts" class="posts"></section>
+  <div class="toolbar">
+    <input class="search" id="search" placeholder="Search messages…">
+    <button class="soft" id="nameBtn">Comment name</button>
+  </div>
+
+  <section id="posts" class="posts"></section>
 
 </main>
 
 <footer>
-  Made with a little too much love, a few cherry blossoms,
-  and many “BABY, GUESS WHAT—” moments. 🌸🤍
+  Made with a little too much love, a few cherry blossoms,
+  and many “BABY, GUESS WHAT—” moments. 🌸🤍
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -819,8 +818,8 @@ const SUPABASE_KEY="sb_publishable_qbZN_IgzgkCSqtarujiYAw_raquOF0A";
 const BUCKET="message-attachments";
 
 const db=window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
+  SUPABASE_URL,
+  SUPABASE_KEY
 );
 
 /* Falling petals */
@@ -828,40 +827,40 @@ const db=window.supabase.createClient(
 const petalLayer=document.getElementById("petals");
 
 for(let i=0;i<22;i++){
-  const petal=document.createElement("span");
+  const petal=document.createElement("span");
 
-  petal.className="petal";
-  petal.style.left=(Math.random()*100)+"vw";
-  petal.style.animationDuration=(11+Math.random()*15)+"s";
-  petal.style.animationDelay=(-Math.random()*24)+"s";
-  petal.style.width=(8+Math.random()*10)+"px";
-  petal.style.height=(6+Math.random()*8)+"px";
-  petal.style.opacity=(.35+Math.random()*.5).toFixed(2);
+  petal.className="petal";
+  petal.style.left=(Math.random()*100)+"vw";
+  petal.style.animationDuration=(11+Math.random()*15)+"s";
+  petal.style.animationDelay=(-Math.random()*24)+"s";
+  petal.style.width=(8+Math.random()*10)+"px";
+  petal.style.height=(6+Math.random()*8)+"px";
+  petal.style.opacity=(.35+Math.random()*.5).toFixed(2);
 
-  petalLayer.appendChild(petal);
+  petalLayer.appendChild(petal);
 }
 
 const $=s=>document.querySelector(s);
 
 const esc=s=>String(s??"").replace(
-  /[&<>"']/g,
-  c=>({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
-  }[c])
+  /[&<>"']/g,
+  c=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[c])
 );
 
 const size=n=>{
-  n=Number(n||0);
+  n=Number(n||0);
 
-  if(n<1024)return n+" B";
-  if(n<1048576)return(n/1024).toFixed(1)+" KB";
-  if(n<1073741824)return(n/1048576).toFixed(1)+" MB";
+  if(n<1024)return n+" B";
+  if(n<1048576)return(n/1024).toFixed(1)+" KB";
+  if(n<1073741824)return(n/1048576).toFixed(1)+" MB";
 
-  return(n/1073741824).toFixed(1)+" GB";
+  return(n/1073741824).toFixed(1)+" GB";
 };
 
 const image=m=>/^image\//.test(m||"");
@@ -874,565 +873,568 @@ let atts=new Map();
 let editing=null;
 
 const visitor=()=>{
-  let v=localStorage.getItem("baby_visitor_id");
+  let v=localStorage.getItem("baby_visitor_id");
 
-  if(!v){
-    v=crypto.randomUUID();
-    localStorage.setItem("baby_visitor_id",v);
-  }
+  if(!v){
+    v=crypto.randomUUID();
+    localStorage.setItem("baby_visitor_id",v);
+  }
 
-  return v;
+  return v;
 };
 
 const visitorName=()=>{
-  return localStorage.getItem("baby_comment_name")||"Anonymous";
+  return localStorage.getItem("baby_comment_name")||"Anonymous";
 };
 
 async function refreshAuth(){
-  const {data}=await db.auth.getUser();
+  const {data}=await db.auth.getUser();
 
-  user=data.user||null;
+  user=data.user||null;
 
-  $("#composer").classList.toggle("show",!!user);
-  $("#loginBtn").style.display=user?"none":"inline-block";
-  $("#logoutBtn").style.display=user?"inline-block":"none";
+  $("#composer").classList.toggle("show",!!user);
+  $("#loginBtn").style.display=user?"none":"inline-block";
+  $("#logoutBtn").style.display=user?"inline-block":"none";
 
-  $("#userStatus").textContent=user
-    ?`Signed in as ${user.email}`
-    :"Public journal · anyone with the link can view";
+  $("#userStatus").textContent=user
+    ?`Signed in as ${user.email}`
+    :"Public journal · anyone with the link can view";
 }
 
 async function load(){
-  await refreshAuth();
+  await refreshAuth();
 
-  const {data,error}=await db
-    .from("messages")
-    .select("*")
-    .order("created_at",{ascending:false});
+  const {data,error}=await db
+    .from("messages")
+    .select("*")
+    .order("created_at",{ascending:false});
 
-  if(error){
-    console.error(error);
+  if(error){
+    console.error(error);
 
-    $("#posts").innerHTML=
-      '<div class="card empty">I couldn’t load the messages right now. 🤍</div>';
+    $("#posts").innerHTML=
+      '<div class="card empty">I couldn’t load the messages right now. 🤍</div>';
 
-    return;
-  }
+    return;
+  }
 
-  postsData=data||[];
+  postsData=data||[];
 
-  const {data:a}=await db
-    .from("message_attachments")
-    .select("*");
+  const {data:a}=await db
+    .from("message_attachments")
+    .select("*");
 
-  atts=new Map();
+  atts=new Map();
 
-  (a||[]).forEach(x=>{
-    if(!atts.has(x.message_id)){
-      atts.set(x.message_id,[]);
-    }
+  (a||[]).forEach(x=>{
+    if(!atts.has(x.message_id)){
+      atts.set(x.message_id,[]);
+    }
 
-    atts.get(x.message_id).push(x);
-  });
+    atts.get(x.message_id).push(x);
+  });
 
-  render();
+  render();
 }
 
 function attachmentHtml(a){
-  const {data}=db.storage
-    .from(BUCKET)
-    .getPublicUrl(a.file_path);
+  const {data}=db.storage
+    .from(BUCKET)
+    .getPublicUrl(a.file_path);
 
-  const url=data.publicUrl;
-  const name=esc(a.file_name);
-  const type=a.mime_type||"";
+  const url=data.publicUrl;
+  const name=esc(a.file_name);
+  const type=a.mime_type||"";
 
-  if(image(type)){
-    return `
-      <div class="attachment">
-        <img src="${url}" alt="${name}">
-        <a href="${url}" target="_blank" rel="noopener">${name}</a>
-      </div>
-    `;
-  }
+  if(image(type)){
+    return `
+      <div class="attachment">
+        <img src="${url}" alt="${name}">
+        <a href="${url}" target="_blank" rel="noopener">${name}</a>
+      </div>
+    `;
+  }
 
-  if(audio(type)){
-    return `
-      <div class="attachment">
-        <audio controls src="${url}"></audio>
-        <a href="${url}" target="_blank" rel="noopener">${name}</a>
-      </div>
-    `;
-  }
+  if(audio(type)){
+    return `
+      <div class="attachment">
+        <audio controls src="${url}"></audio>
+        <a href="${url}" target="_blank" rel="noopener">${name}</a>
+      </div>
+    `;
+  }
 
-  if(video(type)){
-    return `
-      <div class="attachment">
-        <video controls src="${url}"></video>
-        <a href="${url}" target="_blank" rel="noopener">${name}</a>
-      </div>
-    `;
-  }
+  if(video(type)){
+    return `
+      <div class="attachment">
+        <video controls src="${url}"></video>
+        <a href="${url}" target="_blank" rel="noopener">${name}</a>
+      </div>
+    `;
+  }
 
-  return `
-    <div class="attachment">
-      📎
-      <a href="${url}" target="_blank" rel="noopener">${name}</a>
-      <span style="font-size:10px;color:#a08fa5">
-        · ${size(a.size_bytes)}
-      </span>
-    </div>
-  `;
+  return `
+    <div class="attachment">
+      📎
+      <a href="${url}" target="_blank" rel="noopener">${name}</a>
+      <span style="font-size:10px;color:#a08fa5">
+        · ${size(a.size_bytes)}
+      </span>
+    </div>
+  `;
 }
 
 async function communityHtml(id){
-  const [r,c]=await Promise.all([
-    db
-      .from("public_message_reactions")
-      .select("emoji,visitor_id")
-      .eq("message_id",id),
+  const [r,c]=await Promise.all([
+    db
+      .from("public_message_reactions")
+      .select("emoji,visitor_id")
+      .eq("message_id",id),
 
-    db
-      .from("public_message_comments")
-      .select("*")
-      .eq("message_id",id)
-      .order("created_at",{ascending:true})
-  ]);
+    db
+      .from("public_message_comments")
+      .select("*")
+      .eq("message_id",id)
+      .order("created_at",{ascending:true})
+  ]);
 
-  const comments=c.data||[];
+  const comments=c.data||[];
 
-  if(user){
-    for(const cm of comments){
-      const post=postsData.find(p=>p.id===id);
-      cm.is_owner=post&&post.user_id===user.id;
-    }
-  }
+  if(user){
+    for(const cm of comments){
+      const post=postsData.find(p=>p.id===id);
+      cm.is_owner=post&&post.user_id===user.id;
+    }
+  }
 
-  return{
-    reactions:r.data||[],
-    comments
-  };
+  return{
+    reactions:r.data||[],
+    comments
+  };
 }
 
 async function renderCommunity(el,id){
-  const {reactions,comments}=await communityHtml(id);
+  const {reactions,comments}=await communityHtml(id);
 
-  const counts={};
+  const counts={};
 
-  reactions.forEach(x=>{
-    counts[x.emoji]=(counts[x.emoji]||0)+1;
-  });
+  reactions.forEach(x=>{
+    counts[x.emoji]=(counts[x.emoji]||0)+1;
+  });
 
-  const mine=new Set(
-    reactions
-      .filter(x=>x.visitor_id===visitor())
-      .map(x=>x.emoji)
-  );
+  const mine=new Set(
+    reactions
+      .filter(x=>x.visitor_id===visitor())
+      .map(x=>x.emoji)
+  );
 
-  const emojis=["❤️","😂","😭","🥹","🤍","👀","🌸","🤣"];
+  const emojis=["❤️","😂","😭","🥹","🤍","👀","🌸","🤣"];
 
-  el.querySelector(".reacts").innerHTML=emojis.map(e=>`
-    <button class="react ${mine.has(e)?"active":""}" data-e="${esc(e)}">
-      ${e} <small>${counts[e]||""}</small>
-    </button>
-  `).join("");
+  el.querySelector(".reacts").innerHTML=emojis.map(e=>`
+    <button class="react ${mine.has(e)?"active":""}" data-e="${esc(e)}">
+      ${e} <small>${counts[e]||""}</small>
+    </button>
+  `).join("");
 
-  el.querySelector(".comments").innerHTML=comments.map(c=>`
-    <div class="comment">
-      <div class="commenthead">
-        ${esc(c.display_name)}
-        ${c.is_owner
-          ?'<span style="font-size:9px;color:#9a7bb5">· OWNER 🤍</span>'
-          :""}
-        <span class="commentdate">
-          ${new Date(c.created_at).toLocaleString()}
-        </span>
-      </div>
+  el.querySelector(".comments").innerHTML=comments.map(c=>`
+    <div class="comment">
+      <div class="commenthead">
+        ${esc(c.display_name)}
 
-      <div>${esc(c.body)}</div>
+        ${c.is_owner
+          ?'<span style="font-size:9px;color:#9a7bb5">· OWNER 🤍</span>'
+          :""
+        }
 
-      ${
-        c.is_owner
-          ?`<button
-              class="namebtn comment-delete"
-              data-id="${c.id}"
-              style="margin-top:6px;color:#b46f91">
-              Remove comment
-            </button>`
-          :""
-      }
-    </div>
-  `).join("");
+        <span class="commentdate">
+          ${new Date(c.created_at).toLocaleString()}
+        </span>
+      </div>
 
-  el.querySelectorAll(".comment-delete").forEach(b=>{
-    b.onclick=async()=>{
-      if(!confirm("Remove this comment?"))return;
+      <div>${esc(c.body)}</div>
 
-      const {error}=await db
-        .from("public_message_comments")
-        .delete()
-        .eq("id",b.dataset.id);
+      ${
+        c.is_owner
+          ?`<button
+              class="namebtn comment-delete"
+              data-id="${c.id}"
+              style="margin-top:6px;color:#b46f91">
+              Remove comment
+            </button>`
+          :""
+      }
+    </div>
+  `).join("");
 
-      if(error){
-        alert("Couldn’t remove that comment.");
-        console.error(error);
-        return;
-      }
+  el.querySelectorAll(".comment-delete").forEach(b=>{
+    b.onclick=async()=>{
+      if(!confirm("Remove this comment?"))return;
 
-      renderCommunity(el,id);
-    };
-  });
+      const {error}=await db
+        .from("public_message_comments")
+        .delete()
+        .eq("id",b.dataset.id);
 
-  el.querySelectorAll(".react").forEach(b=>{
-  b.onclick=async()=>{
-    const emoji=b.dataset.e;
+      if(error){
+        alert("Couldn’t remove that comment.");
+        console.error(error);
+        return;
+      }
 
-    if(mine.has(emoji)){
-      const {error}=await db.rpc("delete_my_reaction",{
-        p_message_id:id,
-        p_visitor_id:visitor(),
-        p_emoji:emoji
-      });
+      renderCommunity(el,id);
+    };
+  });
 
-      if(error){
-        console.error(error);
-        alert("Couldn’t remove that reaction.");
-        return;
-      }
-    }else{
-      const {error}=await db
-        .from("public_message_reactions")
-        .insert({
-          message_id:id,
-          visitor_id:visitor(),
-          emoji
-        });
+  el.querySelectorAll(".react").forEach(b=>{
+    b.onclick=async()=>{
+      const emoji=b.dataset.e;
 
-      if(
-        error &&
-        !String(error.message||"").includes("duplicate")
-      ){
-        console.error(error);
-        alert("Couldn’t add that reaction.");
-        return;
-      }
-    }
+      if(mine.has(emoji)){
+        const {error}=await db.rpc("delete_my_reaction",{
+          p_message_id:id,
+          p_visitor_id:visitor(),
+          p_emoji:emoji
+        });
 
-    await renderCommunity(el,id);
-  };
-});
+        if(error){
+          console.error(error);
+          alert("Couldn’t remove that reaction.");
+          return;
+        }
+      }else{
+        const {error}=await db
+          .from("public_message_reactions")
+          .insert({
+            message_id:id,
+            visitor_id:visitor(),
+            emoji
+          });
 
-  el.querySelector(".comment-send").onclick=async()=>{
-    const box=el.querySelector(".comment-input");
-    const text=box.value.trim();
+        if(
+          error &&
+          !String(error.message||"").includes("duplicate")
+        ){
+          console.error(error);
+          alert("Couldn’t add that reaction.");
+          return;
+        }
+      }
 
-    if(!text)return;
+      await renderCommunity(el,id);
+    };
+  });
 
-    let name=visitorName();
+  el.querySelector(".comment-send").onclick=async()=>{
+    const box=el.querySelector(".comment-input");
+    const text=box.value.trim();
 
-    if(name==="Anonymous"){
-      const entered=prompt(
-        "What name should appear on your comment?",
-        "Anonymous"
-      );
+    if(!text)return;
 
-      if(entered===null)return;
+    let name=visitorName();
 
-      name=(entered.trim()||"Anonymous").slice(0,40);
+    if(name==="Anonymous"){
+      const entered=prompt(
+        "What name should appear on your comment?",
+        "Anonymous"
+      );
 
-      localStorage.setItem("baby_comment_name",name);
-    }
+      if(entered===null)return;
 
-    const {error}=await db
-      .from("public_message_comments")
-      .insert({
-        message_id:id,
-        visitor_id:visitor(),
-        display_name:name,
-        body:text
-      });
+      name=(entered.trim()||"Anonymous").slice(0,40);
 
-    if(error){
-      alert("Couldn’t post that comment. Please try again.");
-      console.error(error);
-      return;
-    }
+      localStorage.setItem("baby_comment_name",name);
+    }
 
-    box.value="";
-    renderCommunity(el,id);
-  };
+    const {error}=await db
+      .from("public_message_comments")
+      .insert({
+        message_id:id,
+        visitor_id:visitor(),
+        display_name:name,
+        body:text
+      });
+
+    if(error){
+      alert("Couldn’t post that comment. Please try again.");
+      console.error(error);
+      return;
+    }
+
+    box.value="";
+    renderCommunity(el,id);
+  };
 }
 
 function render(){
-  const q=$("#search").value.trim().toLowerCase();
+  const q=$("#search").value.trim().toLowerCase();
 
-  const list=postsData.filter(m=>
-    !q||(m.body||"").toLowerCase().includes(q)
-  );
+  const list=postsData.filter(m=>
+    !q||(m.body||"").toLowerCase().includes(q)
+  );
 
-  if(!list.length){
-    $("#posts").innerHTML=
-      '<div class="card empty">No messages here yet. 🌸🤍</div>';
+  if(!list.length){
+    $("#posts").innerHTML=
+      '<div class="card empty">No messages here yet. 🌸🤍</div>';
 
-    return;
-  }
+    return;
+  }
 
-  $("#posts").innerHTML=list.map(m=>{
-    const files=atts.get(m.id)||[];
+  $("#posts").innerHTML=list.map(m=>{
+    const files=atts.get(m.id)||[];
 
-    return `
-      <article class="card post" data-id="${m.id}">
-        <div class="date">
-          ${new Date(m.created_at).toLocaleString()}
-        </div>
+    return `
+      <article class="card post" data-id="${m.id}">
+        <div class="date">
+          ${new Date(m.created_at).toLocaleString()}
+        </div>
 
-        <div class="postbody">${esc(m.body)}</div>
+        <div class="postbody">${esc(m.body)}</div>
 
-        ${
-          files.length
-            ?`<div class="attachments">
-                ${files.map(attachmentHtml).join("")}
-              </div>`
-            :""
-        }
+        ${
+          files.length
+            ?`<div class="attachments">
+                ${files.map(attachmentHtml).join("")}
+              </div>`
+            :""
+        }
 
-        ${
-          user
-            ?`<div class="posttools">
-                <button class="soft edit">Edit</button>
-                <button class="ghost delete">Delete</button>
-              </div>`
-            :""
-        }
+        ${
+          user
+            ?`<div class="posttools">
+                <button class="soft edit">Edit</button>
+                <button class="ghost delete">Delete</button>
+              </div>`
+            :""
+        }
 
-        <div class="community">
-          <div class="reacttitle">Leave a little love</div>
+        <div class="community">
+          <div class="reacttitle">Leave a little love</div>
 
-          <div class="reacts">Loading…</div>
+          <div class="reacts">Loading…</div>
 
-          <div class="commentbox">
-            <textarea
-              class="comment-input"
-              placeholder="Leave a little message…"></textarea>
+          <div class="commentbox">
+            <textarea
+              class="comment-input"
+              placeholder="Leave a little message…"></textarea>
 
-            <button class="primary comment-send">Post</button>
-          </div>
+            <button class="primary comment-send">Post</button>
+          </div>
 
-          <button class="namebtn namechange">
-            Commenting as ${esc(visitorName())} · change
-          </button>
+          <button class="namebtn namechange">
+            Commenting as ${esc(visitorName())} · change
+          </button>
 
-          <div class="comments"></div>
-        </div>
-      </article>
-    `;
-  }).join("");
+          <div class="comments"></div>
+        </div>
+      </article>
+    `;
+  }).join("");
 
-  list.forEach(m=>{
-    const el=document.querySelector(`[data-id="${m.id}"]`);
+  list.forEach(m=>{
+    const el=document.querySelector(`[data-id="${m.id}"]`);
 
-    renderCommunity(el,m.id);
+    renderCommunity(el,m.id);
 
-    if(user){
-      el.querySelector(".edit").onclick=()=>{
-        startEdit(m);
-      };
+    if(user){
+      el.querySelector(".edit").onclick=()=>{
+        startEdit(m);
+      };
 
-      el.querySelector(".delete").onclick=async()=>{
-        if(!confirm("Delete this message?"))return;
+      el.querySelector(".delete").onclick=async()=>{
+        if(!confirm("Delete this message?"))return;
 
-        const files=atts.get(m.id)||[];
+        const files=atts.get(m.id)||[];
 
-        if(files.length){
-          await db.storage
-            .from(BUCKET)
-            .remove(files.map(x=>x.file_path));
-        }
+        if(files.length){
+          await db.storage
+            .from(BUCKET)
+            .remove(files.map(x=>x.file_path));
+        }
 
-        await db
-          .from("messages")
-          .delete()
-          .eq("id",m.id)
-          .eq("user_id",user.id);
+        await db
+          .from("messages")
+          .delete()
+          .eq("id",m.id)
+          .eq("user_id",user.id);
 
-        load();
-      };
-    }
+        load();
+      };
+    }
 
-    el.querySelector(".namechange").onclick=changeName;
-  });
+    el.querySelector(".namechange").onclick=changeName;
+  });
 }
 
 function changeName(){
-  const n=prompt(
-    "What name should appear on your comments?",
-    visitorName()
-  );
+  const n=prompt(
+    "What name should appear on your comments?",
+    visitorName()
+  );
 
-  if(n!==null&&n.trim()){
-    localStorage.setItem(
-      "baby_comment_name",
-      n.trim().slice(0,40)
-    );
+  if(n!==null&&n.trim()){
+    localStorage.setItem(
+      "baby_comment_name",
+      n.trim().slice(0,40)
+    );
 
-    render();
-  }
+    render();
+  }
 }
 
 function startEdit(m){
-  editing=m.id;
-  $("#body").value=m.body||"";
-  $("#save").textContent="Update message 🤍";
+  editing=m.id;
+  $("#body").value=m.body||"";
+  $("#save").textContent="Update message 🤍";
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
 
 async function uploadFiles(id,files){
-  for(const f of files){
-    const path=
-      `${user.id}/${id}/${crypto.randomUUID()}-${f.name}`;
+  for(const f of files){
+    const path=
+      `${user.id}/${id}/${crypto.randomUUID()}-${f.name}`;
 
-    const {error}=await db
-      .storage
-      .from(BUCKET)
-      .upload(path,f);
+    const {error}=await db
+      .storage
+      .from(BUCKET)
+      .upload(path,f);
 
-    if(error){
-      console.error(error);
-      continue;
-    }
+    if(error){
+      console.error(error);
+      continue;
+    }
 
-    await db
-      .from("message_attachments")
-      .insert({
-        message_id:id,
-        user_id:user.id,
-        file_name:f.name,
-        file_path:path,
-        mime_type:f.type,
-        size_bytes:f.size
-      });
-  }
+    await db
+      .from("message_attachments")
+      .insert({
+        message_id:id,
+        user_id:user.id,
+        file_name:f.name,
+        file_path:path,
+        mime_type:f.type,
+        size_bytes:f.size
+      });
+  }
 }
 
 $("#loginBtn").onclick=()=>{
-  $("#authPanel").classList.add("show");
+  $("#authPanel").classList.add("show");
 };
 
 $("#closeAuth").onclick=()=>{
-  $("#authPanel").classList.remove("show");
+  $("#authPanel").classList.remove("show");
 };
 
 $("#signin").onclick=async()=>{
-  const {error}=await db.auth.signInWithPassword({
-    email:$("#email").value.trim(),
-    password:$("#password").value
-  });
+  const {error}=await db.auth.signInWithPassword({
+    email:$("#email").value.trim(),
+    password:$("#password").value
+  });
 
-  $("#authMessage").textContent=
-    error
-      ?error.message
-      :"Signed in! 🤍";
+  $("#authMessage").textContent=
+    error
+      ?error.message
+      :"Signed in! 🤍";
 
-  if(!error){
-    $("#authPanel").classList.remove("show");
-    load();
-  }
+  if(!error){
+    $("#authPanel").classList.remove("show");
+    load();
+  }
 };
 
 $("#signup").onclick=async()=>{
-  const {error}=await db.auth.signUp({
-    email:$("#email").value.trim(),
-    password:$("#password").value
-  });
+  const {error}=await db.auth.signUp({
+    email:$("#email").value.trim(),
+    password:$("#password").value
+  });
 
-  $("#authMessage").textContent=
-    error
-      ?error.message
-      :"Account created! Check your email if confirmation is required. 🌸";
+  $("#authMessage").textContent=
+    error
+      ?error.message
+      :"Account created! Check your email if confirmation is required. 🌸";
 };
 
 $("#logoutBtn").onclick=async()=>{
-  await db.auth.signOut();
-  load();
+  await db.auth.signOut();
+  load();
 };
 
 $("#attachments").onchange=()=>{
-  const f=[...$("#attachments").files];
+  const f=[...$("#attachments").files];
 
-  $("#filelist").innerHTML=f.length
-    ?f.map(x=>`📎 ${esc(x.name)} · ${size(x.size)}`).join("<br>")
-    :"";
+  $("#filelist").innerHTML=f.length
+    ?f.map(x=>`📎 ${esc(x.name)} · ${size(x.size)}`).join("<br>")
+    :"";
 };
 
 $("#clear").onclick=()=>{
-  editing=null;
-  $("#body").value="";
-  $("#attachments").value="";
-  $("#filelist").innerHTML="";
-  $("#save").textContent="Save message 🤍";
-  $("#saveStatus").textContent="";
+  editing=null;
+  $("#body").value="";
+  $("#attachments").value="";
+  $("#filelist").innerHTML="";
+  $("#save").textContent="Save message 🤍";
+  $("#saveStatus").textContent="";
 };
 
 $("#save").onclick=async()=>{
-  if(!user)return;
+  if(!user)return;
 
-  const body=$("#body").value.trim();
+  const body=$("#body").value.trim();
 
-  if(!body){
-    alert("Please write a message first.");
-    return;
-  }
+  if(!body){
+    alert("Please write a message first.");
+    return;
+  }
 
-  $("#saveStatus").textContent="Saving… 🤍";
+  $("#saveStatus").textContent="Saving… 🤍";
 
-  let id=editing;
-  let error;
+  let id=editing;
+  let error;
 
-  if(editing){
-    ({error}=await db
-      .from("messages")
-      .update({
-        title:"",
-        body,
-        updated_at:new Date().toISOString()
-      })
-      .eq("id",editing)
-      .eq("user_id",user.id));
-  }else{
-    const res=await db
-      .from("messages")
-      .insert({
-        user_id:user.id,
-        title:"",
-        body
-      })
-      .select()
-      .single();
+  if(editing){
+    ({error}=await db
+      .from("messages")
+      .update({
+        title:"",
+        body,
+        updated_at:new Date().toISOString()
+      })
+      .eq("id",editing)
+      .eq("user_id",user.id));
+  }else{
+    const res=await db
+      .from("messages")
+      .insert({
+        user_id:user.id,
+        title:"",
+        body
+      })
+      .select()
+      .single();
 
-    error=res.error;
-    id=res.data?.id;
-  }
+    error=res.error;
+    id=res.data?.id;
+  }
 
-  if(error){
-    $("#saveStatus").textContent="Couldn’t save that message.";
-    console.error(error);
-    return;
-  }
+  if(error){
+    $("#saveStatus").textContent="Couldn’t save that message.";
+    console.error(error);
+    return;
+  }
 
-  if($("#attachments").files.length){
-    await uploadFiles(
-      id,
-      [...$("#attachments").files]
-    );
-  }
+  if($("#attachments").files.length){
+    await uploadFiles(
+      id,
+      [...$("#attachments").files]
+    );
+  }
 
-  $("#clear").click();
-  $("#saveStatus").textContent="Saved! 🤍";
-  load();
+  $("#clear").click();
+  $("#saveStatus").textContent="Saved! 🤍";
+  load();
 };
 
 $("#search").oninput=render;
@@ -1440,7 +1442,7 @@ $("#search").oninput=render;
 $("#nameBtn").onclick=changeName;
 
 db.auth.onAuthStateChange(()=>{
-  setTimeout(load,0);
+  setTimeout(load,0);
 });
 
 load();

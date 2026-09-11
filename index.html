@@ -977,14 +977,39 @@ async function renderCommunity(el,id){
   });
 
   el.querySelectorAll(".react").forEach(b=>{
-    b.onclick=async()=>{
-      const emoji=b.dataset.e;
+  b.onclick=async()=>{
+    const emoji=b.dataset.e;
 
-      if(mine.has(emoji)){
-  const {error}=await db.rpc("delete_my_reaction",{
-  p_message_id:id,
-  p_visitor_id:visitor(),
-  p_emoji:emoji
+    if(mine.has(emoji)){
+      const {error}=await db.rpc("delete_my_reaction",{
+        p_message_id:id,
+        p_visitor_id:visitor(),
+        p_emoji:emoji
+      });
+
+      if(error){
+        console.error("Remove reaction error:",error);
+        alert("Couldn’t remove that reaction: "+error.message);
+        return;
+      }
+    }else{
+      const {error}=await db
+        .from("public_message_reactions")
+        .insert({
+          message_id:id,
+          visitor_id:visitor(),
+          emoji
+        });
+
+      if(error){
+        console.error("Add reaction error:",error);
+        alert("Couldn’t add that reaction: "+error.message);
+        return;
+      }
+    }
+
+    await renderCommunity(el,id);
+  };
 });
 
   if(error){

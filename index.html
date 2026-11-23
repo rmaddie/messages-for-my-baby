@@ -811,11 +811,11 @@ const SUPABASE_URL="https://botpymtjxkwfuxzzbprj.supabase.co";
 const SUPABASE_KEY="sb_publishable_qbZN_IgzgkCSqtarujiYAw_raquOF0A";
 const BUCKET="message-attachments";
 
-const TABLE_POSTS="new_messages";
-const TABLE_ATTACHMENTS="new_message_attachments";
-const TABLE_REACTIONS="new_public_message_reactions";
-const TABLE_COMMENTS="new_public_message_comments";
-const RPC_DELETE_REACTION="delete_my_new_reaction";
+const TABLE_POSTS="messages";
+const TABLE_ATTACHMENTS="message_attachments";
+const TABLE_REACTIONS="public_message_reactions";
+const TABLE_COMMENTS="public_message_comments";
+const RPC_DELETE_REACTION="delete_my_reaction";
 
 const db=window.supabase.createClient(
   SUPABASE_URL,
@@ -1026,7 +1026,7 @@ async function renderCommunity(el,id){
       .map(x=>x.emoji)
   );
 
-  const emojis=["🤍","🌸","😆","🤭","😭"];
+  const emojis=["🤍","🌸","😆","🤭","😭","👀"];
 
   el.querySelector(".reacts").innerHTML=emojis.map(e=>`
     <button class="react ${mine.has(e)?"active":""}" data-e="${esc(e)}">
@@ -1252,7 +1252,8 @@ function render(){
         await db
           .from(TABLE_POSTS)
           .delete()
-          .eq("id",m.id);
+          .eq("id",m.id)
+          .eq("user_id",user.id);
 
         load();
       };
@@ -1399,7 +1400,8 @@ $("#save").onclick=async()=>{
         body,
         updated_at:new Date().toISOString()
       })
-      .eq("id",editing));
+      .eq("id",editing)
+      .eq("user_id",user.id));
   }else{
     const res=await db
       .from(TABLE_POSTS)

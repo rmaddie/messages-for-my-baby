@@ -63,8 +63,6 @@ body:after{
   transform:rotate(24deg);
 }
 
-/* Falling petals */
-
 .petal{
   position:fixed;
   top:-35px;
@@ -96,8 +94,6 @@ body:after{
     opacity:0;
   }
 }
-
-/* Soft Sakura branches */
 
 .branch-art{
   position:fixed;
@@ -812,17 +808,19 @@ footer{
 
 <script>
 const SUPABASE_URL="https://botpymtjxkwfuxzzbprj.supabase.co";
-
 const SUPABASE_KEY="sb_publishable_qbZN_IgzgkCSqtarujiYAw_raquOF0A";
-
 const BUCKET="message-attachments";
+
+const TABLE_POSTS="new_messages";
+const TABLE_ATTACHMENTS="new_message_attachments";
+const TABLE_REACTIONS="new_public_message_reactions";
+const TABLE_COMMENTS="new_public_message_comments";
+const RPC_DELETE_REACTION="delete_my_new_reaction";
 
 const db=window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
-
-/* Falling petals */
 
 const petalLayer=document.getElementById("petals");
 
@@ -905,7 +903,7 @@ async function load(){
   await refreshAuth();
 
   const {data,error}=await db
-    .from("messages")
+    .from(TABLE_POSTS)
     .select("*")
     .order("created_at",{ascending:false});
 
@@ -921,7 +919,7 @@ async function load(){
   postsData=data||[];
 
   const {data:a}=await db
-    .from("message_attachments")
+    .from(TABLE_ATTACHMENTS)
     .select("*");
 
   atts=new Map();
@@ -987,12 +985,12 @@ function attachmentHtml(a){
 async function communityHtml(id){
   const [r,c]=await Promise.all([
     db
-      .from("public_message_reactions")
+      .from(TABLE_REACTIONS)
       .select("emoji,visitor_id")
       .eq("message_id",id),
 
     db
-      .from("public_message_comments")
+      .from(TABLE_COMMENTS)
       .select("*")
       .eq("message_id",id)
       .order("created_at",{ascending:true})
@@ -1028,7 +1026,7 @@ async function renderCommunity(el,id){
       .map(x=>x.emoji)
   );
 
-  const emojis=["❤️","😂","😭","🥹","🤍","👀","🌸","🤣"];
+  const emojis=["🤍","🌸","😆","🤭","😭"];
 
   el.querySelector(".reacts").innerHTML=emojis.map(e=>`
     <button class="react ${mine.has(e)?"active":""}" data-e="${esc(e)}">
@@ -1071,7 +1069,7 @@ async function renderCommunity(el,id){
       if(!confirm("Remove this comment?"))return;
 
       const {error}=await db
-        .from("public_message_comments")
+        .from(TABLE_COMMENTS)
         .delete()
         .eq("id",b.dataset.id);
 
@@ -1090,7 +1088,7 @@ async function renderCommunity(el,id){
       const emoji=b.dataset.e;
 
       if(mine.has(emoji)){
-        const {error}=await db.rpc("delete_my_reaction",{
+        const {error}=await db.rpc(RPC_DELETE_REACTION,{
           p_message_id:id,
           p_visitor_id:visitor(),
           p_emoji:emoji
@@ -1103,7 +1101,7 @@ async function renderCommunity(el,id){
         }
       }else{
         const {error}=await db
-          .from("public_message_reactions")
+          .from(TABLE_REACTIONS)
           .insert({
             message_id:id,
             visitor_id:visitor(),
@@ -1146,7 +1144,7 @@ async function renderCommunity(el,id){
     }
 
     const {error}=await db
-      .from("public_message_comments")
+      .from(TABLE_COMMENTS)
       .insert({
         message_id:id,
         visitor_id:visitor(),
@@ -1252,10 +1250,9 @@ function render(){
         }
 
         await db
-          .from("messages")
+          .from(TABLE_POSTS)
           .delete()
-          .eq("id",m.id)
-          .eq("user_id",user.id);
+          .eq("id",m.id);
 
         load();
       };
@@ -1308,7 +1305,7 @@ async function uploadFiles(id,files){
     }
 
     await db
-      .from("message_attachments")
+      .from(TABLE_ATTACHMENTS)
       .insert({
         message_id:id,
         user_id:user.id,
@@ -1396,17 +1393,16 @@ $("#save").onclick=async()=>{
 
   if(editing){
     ({error}=await db
-      .from("messages")
+      .from(TABLE_POSTS)
       .update({
         title:"",
         body,
         updated_at:new Date().toISOString()
       })
-      .eq("id",editing)
-      .eq("user_id",user.id));
+      .eq("id",editing));
   }else{
     const res=await db
-      .from("messages")
+      .from(TABLE_POSTS)
       .insert({
         user_id:user.id,
         title:"",
